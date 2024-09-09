@@ -14,7 +14,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '6d5724d18a683d2d80e819cc26d8065370970be262e1b55b1247ef5f14bb0e159414f45cf8d625256f74b7a962dfc976ccaa2fa8b0364d9cec1e91476c28ab98'
+  # config.secret_key = 'db1194a85ac36438e99134e23830acbd83641404a1f951a08d7bedd486376550b02717f2e810f1adbfe7dc0c5977d200d2d1558e253267596569be72a8b6ae0d'
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
@@ -24,8 +24,7 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  # config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
-  config.mailer_sender = 'no-reply@nibblenotes.com'
+  config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
@@ -127,7 +126,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 12
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = '3b7f7a1429cc6b4925739e485b2a324fee18e715972b66a50be601186e9f59c6082a2e1ca239e4882766075589ded0744ab653b67cb0e7ed8bca16bafc25a386'
+  # config.pepper = '930107c81243358de3b8c571e973badefde7bf928ac9310f5648c44e0b4d72fbbeea7faa4afa2f64c43653f7d5f4eeff2d267eab18cfee1b5cd64234e0c8bd4d'
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
@@ -264,7 +263,7 @@ Devise.setup do |config|
   # should add them to the navigational formats lists.
   #
   # The "*/*" below is required to match Internet Explorer requests.
-  config.navigational_formats = ['*/*', :html, :turbo_stream]
+  # config.navigational_formats = ['*/*', :html, :turbo_stream]
 
   # The default HTTP method used to sign out a resource. Default is :delete.
   config.sign_out_via = :delete
