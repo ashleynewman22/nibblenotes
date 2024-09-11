@@ -1,17 +1,33 @@
-<div class="container mt-4">
-  <h1 class="mb-4">Categories</h1>
+<main class="container my-5">
 
-  <div class="row">
-    <% @categories.each do |category| %>
-      <div class="col-md-4 mb-4">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title"><%= category.name %></h5>
-            <p class="card-text"><%= pluralize(category.recipes.count, 'recipe') %></p>
-            <%= link_to "View Category", category_path(category), class: "btn btn-primary" %>
+  <h1 class="mb-4 text-center text-primary">Explore Food Categories</h1>
+
+  <!-- Main content section with proper alignment and margins -->
+  <div class="container mt-4">
+    <div class="d-flex flex-wrap justify-content-start">
+      <% @categories.each do |category| %>
+        <div class="card me-3 mb-4" style="width: 18rem;">
+          <div class="card-body bg-light d-flex flex-column justify-content-between">
+            <h5 class="card-title text-success"><%= category.name %></h5>
+            <p class="card-text text-muted"><%= category.recipes.count %> recipes</p>
+            <!-- Add Recipe button -->
+            <%= link_to "Add #{category.name}", new_recipe_path(category: category), class: "btn btn-outline-info btn-sm mt-auto" %>
+          </div>
+          <div class="card-footer bg-white border-top d-flex justify-content-between align-items-center">
+            <!-- Buttons aligned in one row -->
+            <div class="btn-group">
+              <%= link_to "View Category", category_path(category), class: "btn btn-outline-primary btn-sm" %>
+              <%= link_to "Recipes", recipe_path(category), class: "btn btn-outline-success btn-sm" %>
+              <%= link_to "Update", edit_category_path(category), class: "btn btn-outline-warning btn-sm" %>
+              <%#= link_to 'Add New Category', category_path(category), class: "btn btn-outline-primary btn-sm" %>
+            </div>
           </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
-</div>
+
+  <div class="text-center mt-4">
+    <%= link_to "Add New Category", new_category_path, class: "btn btn-primary" %>
+  </div>
+</main>
