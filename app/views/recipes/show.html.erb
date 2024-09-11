@@ -1,0 +1,14 @@
+
+<div class="container">
+  <h1><%= @recipe.title %></h1>
+  <ul>
+    <% @recipe.categories.each do |category| %>
+      <li><%= category.name %></li>
+    <% end %>
+  </ul>
+  <p><%= @recipe.ingredients %></p>
+  <p><%= @recipe.description %></p>
+  <!--<p><%#= @recipe.notes.first.content %></p>-->
+</div>
+
+<%= link_to "Back to all recipes", recipes_path,  class: "btn btn-purple" %>
