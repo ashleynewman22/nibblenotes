@@ -1,0 +1,14 @@
+<div class="container mt-5">
+  <h1 class="mb-4">Add Category to <%= @recipe.title %></h1>
+
+  <%= form_with(model: [@recipe, @recipe.recipe_categories.build], local: true, class: "mb-4") do |form| %>
+    <% if @recipe_category&.errors&.any? %>
+      <div class="alert alert-danger" role="alert">
+        <h4 class="alert-heading">Errors prevented saving this category:</h4>
+        <ul>
+          <% @recipe_category.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>

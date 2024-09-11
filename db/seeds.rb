@@ -32,7 +32,7 @@ puts "Creating categories"
 category1 = Category.create!(
   name: "Vegetarian",
   description: "Dishes that do not include meat or fish.",
-  user_id: user1.id
+  user_id: user2.id
 )
 
 category2 = Category.create!(
@@ -47,7 +47,7 @@ recipe1 = Recipe.create!(
   title: "Vegetable Stir Fry",
   ingredients: "Broccoli, Carrots, Bell Peppers, Soy Sauce, Garlic",
   description: "A healthy stir fry with fresh vegetables and soy sauce.",
-  user_id: user1.id
+  user_id: user2.id
 )
 
 recipe2 = Recipe.create!(
