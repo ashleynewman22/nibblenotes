@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   # Can be used by load balancers and uptime monitors to verify that the app is live.
   get "up" => "rails/health#show", as: :rails_health_check
 
-  resources :recipes, only: %i[index new create edit update destroy] do
+  resources :recipes do
     resources :notes, only: %i[index new create]
     collection do
       get 'ai/new', to: 'recipes#ai_new', as: 'ai_new'
@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :categories, only: %i[index new create edit update destroy]
+  resources :categories
 
   resources :notes, only: %i[show edit update]
 end

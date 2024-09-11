@@ -9,11 +9,11 @@
 #   end
 # Clear existing data
 puts "Clearing database"
-User.destroy_all
+RecipeCategory.destroy_all
+Note.destroy_all
 Recipe.destroy_all
 Category.destroy_all
-Note.destroy_all
-RecipeCategory.destroy_all
+User.destroy_all
 
 # Create users
 puts "Creating Users"
@@ -32,7 +32,7 @@ puts "Creating categories"
 category1 = Category.create!(
   name: "Vegetarian",
   description: "Dishes that do not include meat or fish.",
-  user_id: user1.id
+  user_id: user2.id
 )
 
 category2 = Category.create!(
@@ -41,13 +41,19 @@ category2 = Category.create!(
   user_id: user1.id
 )
 
+category3 = Category.create!(
+  name: "Dinner",
+  description: "Nutritious meals to end off the day.",
+  user_id: user2.id
+)
+
 # Create recipes
 puts "Creating recipes"
 recipe1 = Recipe.create!(
   title: "Vegetable Stir Fry",
   ingredients: "Broccoli, Carrots, Bell Peppers, Soy Sauce, Garlic",
   description: "A healthy stir fry with fresh vegetables and soy sauce.",
-  user_id: user1.id
+  user_id: user2.id
 )
 
 recipe2 = Recipe.create!(
