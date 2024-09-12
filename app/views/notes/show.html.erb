@@ -1,0 +1,18 @@
+<h1>Notes</h1>
+
+<div class="h2 text-center">
+  <h2>Add a note</h2>
+</div>
+<hr>
+<!---->
+<%#= simple_form_for(@note) do |f| %>
+  <%#= f.input :content %>
+  <%#= f.input :name %>
+  <%#= f.input :photo, as: :file %>
+  <%#= f.submit "Add note" %>
+  <%# end %>
+    <%#= link_to "Back to all recipes", recipes_path %>
+<!---->
+
+  <%#= link_to "view notes", new_note_path, class: "btn btn-purple" %>
+  <%= link_to "Add a note", new_recipe_note_path(@recipe), class: "btn btn-purple" %>
