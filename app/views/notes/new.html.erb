@@ -1,0 +1,13 @@
+<div class="h2 text-center">
+  <h2>Add a note</h2>
+</div>
+<hr>
+
+<div class="container">
+<%= simple_form_for [@recipe, @note] do |f| %>
+  <%= f.input :content %>
+  <%= f.submit "Add note" %>
+  <% end %>
+
+<%= link_to "Back to all recipes", recipes_path %>
+</div>

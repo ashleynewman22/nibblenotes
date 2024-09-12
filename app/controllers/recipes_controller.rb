@@ -2,10 +2,13 @@ class RecipesController < ApplicationController
   def index
     @recipes = Recipe.where(user: current_user)
     @categories = Category.all
+    # @notes = Note.all
   end
 
   def show
     @recipe = Recipe.find(params[:id])
+    @notes = @recipe.notes
+    # @notes = Notes.all
   end
 
   def new
@@ -17,18 +20,17 @@ class RecipesController < ApplicationController
     @recipe.user = current_user
     if @recipe.save
       redirect_to @recipe
-      # redirect_to recipe_path(@recipe)
     else
       render :new, status: :unprocessable_entity
     end
   end
 
-  def destroy
-    @recipe = Recipe.find(params[:id])
+  # def destroy
+  #   @recipe = Recipe.find(params[:id])
 
-    @recipe.destroy
-    redirect_to recipes_path, status: :see_other
-  end
+  #   @recipe.destroy
+  #   redirect_to recipes_path, status: :see_other
+  # end
 
   private
 
