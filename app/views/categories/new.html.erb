@@ -1,0 +1,9 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <h1 class="mb-4 text-primary">New Category</h1>
+      <%= render 'form', category: @category %>
+      <%= link_to 'Back to Categories', categories_path, class: "btn btn-secondary mt-3" %>
+    </div>
+  </div>
+</div>
