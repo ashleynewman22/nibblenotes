@@ -1,14 +1,22 @@
 
 <div class="container">
   <h1><%= @recipe.title %></h1>
+  <h2>Categories</h2>
   <ul>
     <% @recipe.categories.each do |category| %>
       <li><%= category.name %></li>
     <% end %>
   </ul>
+  <h2>Ingredients</h2>
   <p><%= @recipe.ingredients %></p>
+  <h2>Description</h2>
   <p><%= @recipe.description %></p>
-  <!--<p><%#= @recipe.notes.first.content %></p>-->
+  <h2>Notes</h2>
+    <% @recipe.notes.each do |note| %>
+      <li><%= note.content %></li>
+    <% end %>
 </div>
 
 <%= link_to "Back to all recipes", recipes_path,  class: "btn btn-purple" %>
+<%= link_to "Add a note", new_recipe_note_path(@recipe), class: "btn btn-purple" %>
+<%#= link_to "view notes", new_notes_path(note), class: "btn btn-purple" %>

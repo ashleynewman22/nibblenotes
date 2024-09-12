@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: "categories#index"
+  root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   resources :recipes do
-    resources :notes, only: %i[index new create]
+    resources :notes, only: %i[new create show edit update]
     collection do
       get 'ai/new', to: 'recipes#ai_new', as: 'ai_new'
       post 'ai', to: 'recipes#ai_create', as: 'ai_create'
@@ -16,9 +16,7 @@ Rails.application.routes.draw do
   end
 
   resources :categories
-
-  resources :notes, only: %i[show edit update]
-
 end
+# resources :notes, only: %i[show edit update]
 # Defines the root path route ("/")
 # root "posts#index"
