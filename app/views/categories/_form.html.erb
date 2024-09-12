@@ -1,3 +1,4 @@
+<div class="form-floating mb-3">
 <%= simple_form_for(category) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
@@ -12,3 +13,4 @@
     <%= f.button :submit, class: 'btn btn-primary' %>
   </div>
 <% end %>
+</div>
