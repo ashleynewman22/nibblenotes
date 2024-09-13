@@ -1,22 +1,31 @@
-
-<div class="container">
+<div class="container recipe-card">
   <h1><%= @recipe.title %></h1>
-  <h2>Categories</h2>
-  <ul>
+  <div class="row">
+  <div class="col-8">
+   <h2>Categories</h2>
+  <ul class="category-list">
     <% @recipe.categories.each do |category| %>
-      <li><%= category.name %></li>
+      <li class="category-name"><%= category.name %></li>
     <% end %>
   </ul>
+  <div class="container-ingredients">
   <h2>Ingredients</h2>
   <p><%= @recipe.ingredients %></p>
+  </div>
+  <div class="container-description">
   <h2>Description</h2>
   <p><%= @recipe.description %></p>
+  </div>
+  </div>
+  <div class="col-4">
+  <div class="container-notes">
   <h2>Notes</h2>
     <% @recipe.notes.each do |note| %>
       <li><%= note.content %></li>
     <% end %>
+    </div>
+    </div>
+    </div>
+<%= link_to "Back to all recipes", recipes_path,  class: "btn btn-primary" %>
+<%= link_to "Add a note", new_recipe_note_path(@recipe), class: "btn btn-primary" %>
 </div>
-
-<%= link_to "Back to all recipes", recipes_path,  class: "btn btn-purple" %>
-<%= link_to "Add a note", new_recipe_note_path(@recipe), class: "btn btn-purple" %>
-<%#= link_to "view notes", new_notes_path(note), class: "btn btn-purple" %>
