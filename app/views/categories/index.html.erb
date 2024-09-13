@@ -28,7 +28,7 @@
             <!-- Buttons aligned in one row -->
             <div class="btn-group">
               <%= link_to "View Category", category_path(category), class: "btn btn-outline-primary btn-sm" %>
-              <%= link_to "Recipes", recipe_path(category), class: "btn btn-outline-success btn-sm" %>
+              <%= link_to "Recipes", category_path(category), class: "btn btn-outline-success btn-sm" %>
               <%= link_to "Update", edit_category_path(category), class: "btn btn-outline-warning btn-sm" %>
               <%#= link_to 'Add New Category', category_path(category), class: "btn btn-outline-primary btn-sm" %>
             </div>
