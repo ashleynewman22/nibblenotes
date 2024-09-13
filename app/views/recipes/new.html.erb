@@ -7,7 +7,7 @@
   <%= f.input :title %>
   <%= f.input :ingredients %>
   <%= f.input :description %>
-  <%#= f.input :photo, as: :file %>
+  <%= f.input :photo, as: :file %>
   <%= f.input :category_ids, collection: current_user.categories, as: :check_boxes, label_method: :name, value_method: :id, label: "Select categories" %>
   <%= f.submit "Add #{@recipe.title}" %>
   <% end %>

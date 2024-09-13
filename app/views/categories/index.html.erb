@@ -1,6 +1,16 @@
+<style>
+.highlight-text {
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+.highlight-text:hover {
+            color: #blue;
+            transform: scale(1.05);
+        }
+</style>
 <main class="container my-5">
 
-  <h1 class="mb-4 text-center text-primary">Explore Food Categories</h1>
+  <h1 class="mb-4 text-center text-primary highlight-text ">Explore Food Categories</h1>
 
   <!-- Main content section with proper alignment and margins -->
   <div class="container mt-4">
@@ -8,6 +18,7 @@
       <% @categories.each do |category| %>
         <div class="card me-3 mb-4" style="width: 18rem;">
           <div class="card-body bg-light d-flex flex-column justify-content-between">
+            <%= cl_image_tag category.photo.key, height: 250, crop: :fill, class:"w-100" %>
             <h5 class="card-title text-success"><%= category.name %></h5>
             <p class="card-text text-muted"><%= category.recipes.count %> recipes</p>
             <!-- Add Recipe button -->
