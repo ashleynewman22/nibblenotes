@@ -1,7 +1,10 @@
 # app/controllers/categories_controller.rb
 class CategoriesController < ApplicationController
+  # before_action :authenticate_user!
+  # before_action :set_category, only: [:show, :edit, :update, :destroy]
+
   def index
-    @categories = Category.all
+    @categories = Category.where(user: current_user)
   end
 
   def show
@@ -15,6 +18,7 @@ class CategoriesController < ApplicationController
 
   def create
     @category = Category.new(category_params)
+    @category.user = current_user
     if @category.save
       redirect_to @category, notice: 'Category was successfully created.'
     else
@@ -48,6 +52,6 @@ class CategoriesController < ApplicationController
   end
 
   def category_params
-    params.require(:category).permit(:name)
+    params.require(:category).permit(:name, :description)
   end
 end
