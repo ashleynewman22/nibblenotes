@@ -1,8 +1,8 @@
-
-<div class="h2 text-center">
+<div class="container recipe-form">
+<div class="container-heading">
 <h2>Add your recipe</h2>
 </div>
-<hr>
+<div class="recipe-info">
 <%= simple_form_for(@recipe) do |f| %>
   <%= f.input :title %>
   <%= f.input :ingredients %>
@@ -11,4 +11,6 @@
   <%= f.input :category_ids, collection: current_user.categories, as: :check_boxes, label_method: :name, value_method: :id, label: "Select categories" %>
   <%= f.submit "Add #{@recipe.title}" %>
   <% end %>
-    <%= link_to "Back to all recipes", recipes_path %>
+  </div>
+    <%= link_to "Back to all recipes", recipes_path, class: "btn btn-primary" %>
+</div>
