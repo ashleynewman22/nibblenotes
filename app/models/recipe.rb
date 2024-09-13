@@ -3,6 +3,7 @@ class Recipe < ApplicationRecord
   has_many  :recipe_categories
   has_many  :categories, :through => :recipe_categories
   has_many  :notes
+  has_one_attached :photo
 
   validates :title, presence: true
   validates :ingredients, presence: true

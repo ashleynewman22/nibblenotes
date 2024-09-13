@@ -52,6 +52,7 @@ gem "sassc-rails"
 
 # my custom gems
 gem "devise"
+gem "cloudinary"
 
 group :development, :test do
   gem "dotenv-rails"
