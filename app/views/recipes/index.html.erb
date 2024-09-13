@@ -11,5 +11,5 @@
     <% @recipes.each do |recipe| %>
       <%= link_to recipe.title, recipe_path(recipe), class: "link-recipe" %>
     <% end %>
-     <%= link_to "Add a recipe", new_recipe_path, class: "btn btn-purple" %>
+     <%= link_to "Add a recipe", new_recipe_path, class: "btn btn-primary" %>
   </div>
