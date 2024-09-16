@@ -1,0 +1,21 @@
+<h1>What ingredients do you have?</h1>
+<!--<form action="<%#= ai_answer_path %>">
+  <input type="text" name="ingredients">
+  <button>Get my recipe</button>
+</form>-->
+
+
+<%= simple_form_for :recipe, url: ai_answer_path, method: :post do |f| %>
+  <%= f.input :ingredients, label: "Enter ingredients" %>
+
+  <div class="recipe-type">
+    <label>Choose Recipe Type:</label>
+    <%= f.radio_button :recipe_type, "simple & sweet", checked: true %> Simple & Sweet
+    <%= f.radio_button :recipe_type, "spice it up" %> Spice it up
+  </div>
+
+  <%= f.submit "Get My Recipe" %>
+<% end %>
+
+<!--simple & sweet vs spice it up-->
+<!--casual/simple vs master chef mode-->

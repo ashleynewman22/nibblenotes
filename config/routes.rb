@@ -14,6 +14,9 @@ Rails.application.routes.draw do
       post 'ai', to: 'recipes#ai_create', as: 'ai_create'
     end
   end
+  get 'ai_chef', to: 'pages#ai_chef', as: 'ai_chef'
+  get 'ai_answer', to: 'pages#ai_answer', as: 'ai_answer'
+  post 'ai_answer', to: 'pages#ai_answer'
 
   resources :categories
 end
