@@ -1,9 +1,17 @@
 class RecipesController < ApplicationController
+  # def index
+  #   @recipes = Recipe.where(user: current_user)
+  #   @categories = Category.all
+  #   # @notes = Note.all
+  # end
+
   def index
     @recipes = Recipe.where(user: current_user)
-    @categories = Category.all
-    # @notes = Note.all
+    if params[:query].present?
+      @recipes = @recipes.search_by_title_and_ingredients(params[:query])
+    end
   end
+
 
   def show
     @recipe = Recipe.find(params[:id])
@@ -50,5 +58,5 @@ end
   private
 
   def recipe_params
-    params.require(:recipe).permit(:title, :photo, :ingredients, :description, category_ids: [])
+    params.require(:recipe).permit(:title, :photo, :ingredients, :method, category_ids: [])
   end
