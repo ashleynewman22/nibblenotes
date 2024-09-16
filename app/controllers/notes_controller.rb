@@ -1,53 +1,52 @@
 class NotesController < ApplicationController
-  # def index
-  # @notes = Note.where(user: current_user)
-  # @categories = Category.all
-
-  # ADD IF YOU WANT ALL RECIPES TO SHOW ON RECIPE, NOT ONLY WHEN YOU CLICK ON VIEW NOTES
-  # def index
-  #   @recipe = Recipe.find(params[:recipe_id])
-  #   @notes = @recipe.notes
-  # end
-
-  # end
+  def index
+    @notes = Note.where(user: current_user)
+    @categories = Category.all
+  end
 
   def show
     @note = Note.find(params[:id])
-    # @recipe = Recipe.find(params[:recipe_id])
     @recipe = @note.recipe
     @notes = @recipe.notes
   end
 
   def new
-    @recipe = Recipe.find(params[:recipe_id]) # need to use simple_form_for for user to create
+    @recipe = Recipe.find(params[:recipe_id])
     @note = Note.new
-    # @note = @recipe.notes.build
   end
 
   def create
-    # @recipe = Recipe.find(params[:recipe_id])
-    # @note = @recipe.notes.build(note_params)
-    # @note.user = current_user
-    # OR
     @recipe = Recipe.find(params[:recipe_id])
     @note = Note.new(note_params)
     @note.recipe = @recipe
-    # @note.user = current_user
+    @note.user = current_user  # This line should work now
 
     if @note.save
-      redirect_to recipe_path(@recipe)
-      # redirect_to recipe_path(@recipe)
+      redirect_to recipe_path(@recipe), notice: 'Note was successfully created.'
     else
       render :new, status: :unprocessable_entity
     end
   end
 
-  # def destroy
-  #   @recipe = Recipe.find(params[:id])
+  def update
+    @recipe = Recipe.find(params[:recipe_id])
+    @note = @recipe.notes.find_or_initialize_by(user: current_user)
 
-  #   @recipe.destroy
-  #   redirect_to recipes_path, status: :see_other
-  # end
+    if @note.update(note_params)
+      # Remove all other notes for this recipe and user
+      @recipe.notes.where(user: current_user).where.not(id: @note.id).destroy_all
+      redirect_to recipe_path(@recipe), notice: 'Note was successfully updated.'
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @note = Note.find(params[:id])
+    @recipe = @note.recipe
+    @note.destroy
+    redirect_to recipe_path(@recipe), status: :see_other, notice: 'Note was successfully deleted.'
+  end
 
   private
 
@@ -55,4 +54,3 @@ class NotesController < ApplicationController
     params.require(:note).permit(:content)
   end
 end
-# :recipe_id
