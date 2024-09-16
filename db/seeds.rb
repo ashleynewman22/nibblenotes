@@ -46,15 +46,15 @@ end
 # Create recipes with Cloudinary images
 puts "Creating recipes with Cloudinary images"
 recipes = [
-  { title: "Banana Bread", ingredients: "Bananas, Flour, Sugar, Butter, Eggs", description: "A moist banana bread.", image_url: "https://images.unsplash.com/photo-1497534547324-0ebb3f052e88?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", category_name: "Baking" },
-  { title: "Spaghetti Carbonara", ingredients: "Spaghetti, Eggs, Parmesan, Pancetta", description: "A classic Italian pasta dish.", image_url: "https://images.unsplash.com/photo-1588013273468-315fd88ea34c?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", category_name: "Pasta" }
+  { title: "Banana Bread", ingredients: "Bananas, Flour, Sugar, Butter, Eggs", method: "A moist banana bread.", image_url: "https://images.unsplash.com/photo-1497534547324-0ebb3f052e88?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", category_name: "Baking" },
+  { title: "Spaghetti Carbonara", ingredients: "Spaghetti, Eggs, Parmesan, Pancetta", method: "A classic Italian pasta dish.", image_url: "https://images.unsplash.com/photo-1588013273468-315fd88ea34c?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", category_name: "Pasta" }
 ]
 recipes.each do |recipe_data|
   category = Category.find_by(name: recipe_data[:category_name])
   recipe = Recipe.create!(
     title: recipe_data[:title],
     ingredients: recipe_data[:ingredients],
-    description: recipe_data[:description],
+    method: recipe_data[:method],
     user: category.user, # Ensure recipe user is the same as the category user
     categories: [category]
   )

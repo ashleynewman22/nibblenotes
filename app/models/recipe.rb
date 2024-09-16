@@ -7,5 +7,13 @@ class Recipe < ApplicationRecord
 
   validates :title, presence: true
   validates :ingredients, presence: true
-  validates :description, presence: true
+  validates :method, presence: true
+
+  include PgSearch::Model
+pg_search_scope :search_by_title_and_ingredients,
+  against: [ :title, :ingredients ],
+  using: {
+    tsearch: { prefix: true } #
+  }
+
 end

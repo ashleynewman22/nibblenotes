@@ -6,7 +6,7 @@
 <%= simple_form_for(@recipe) do |f| %>
   <%= f.input :title %>
   <%= f.input :ingredients %>
-  <%= f.input :description %>
+  <%= f.input :method %>
   <%= f.input :photo, as: :file %>
   <%= f.input :category_ids, collection: current_user.categories, as: :check_boxes, label_method: :name, value_method: :id, label: "Select categories" %>
   <%= f.submit "Add #{@recipe.title}" %>

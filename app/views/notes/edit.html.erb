@@ -1,0 +1,8 @@
+<h1>Edit Note</h1>
+<%= simple_form_for [@recipe, @note] do |f| %>
+  <%= f.input :content, value:@note.content %>
+  <%= f.submit "Update" %>
+  <% end %>
+
+<%= link_to "Back to all recipes", recipes_path %>
+</div>

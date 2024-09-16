@@ -5,6 +5,9 @@ class CategoriesController < ApplicationController
 
   def index
     @categories = Category.where(user: current_user)
+    if params[:query].present?
+      @categories = @categories.search_by_name_and_description(params[:query])
+    end
   end
 
   def show
