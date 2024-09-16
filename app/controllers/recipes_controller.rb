@@ -16,11 +16,10 @@ class RecipesController < ApplicationController
   def show
     @recipe = Recipe.find(params[:id])
     @notes = @recipe.notes
-    # @notes = Notes.all
   end
 
   def new
-    @recipe = Recipe.new # need to use simple_form_for for user to create new item rental
+    @recipe = Recipe.new
   end
 
   def create
@@ -32,6 +31,22 @@ class RecipesController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
+
+  def edit
+    @recipe = Recipe.find(params[:id])
+  end
+
+  def update
+    @recipe = Recipe.find(params[:id])
+    # @recipe.update(recipe_params)
+    # redirect_to recipe_path(@recipe)
+    if @recipe.update(recipe_params)
+      redirect_to @recipe, notice: 'Recipe was successfully updated'
+    else
+      render :edit
+    end
+  end
+end
 
   # def destroy
   #   @recipe = Recipe.find(params[:id])
@@ -45,4 +60,3 @@ class RecipesController < ApplicationController
   def recipe_params
     params.require(:recipe).permit(:title, :photo, :ingredients, :method, category_ids: [])
   end
-end

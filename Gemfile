@@ -53,6 +53,7 @@ gem "sassc-rails"
 # my custom gems
 gem "devise"
 gem "cloudinary"
+gem "ruby-openai"
 gem "pg_search"
 group :development, :test do
   gem "dotenv-rails"
