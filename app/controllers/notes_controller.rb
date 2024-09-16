@@ -19,7 +19,7 @@ class NotesController < ApplicationController
     @recipe = Recipe.find(params[:recipe_id])
     @note = Note.new(note_params)
     @note.recipe = @recipe
-    @note.user = current_user  # This line should work now
+    @note.user = current_user
 
     if @note.save
       redirect_to recipe_path(@recipe), notice: 'Note was successfully created.'
@@ -28,13 +28,15 @@ class NotesController < ApplicationController
     end
   end
 
-  def update
-    @recipe = Recipe.find(params[:recipe_id])
-    @note = @recipe.notes.find_or_initialize_by(user: current_user)
+  def edit
+    @note = Note.find(params[:id])
+    @recipe = @note.recipe
+  end
 
+  def update
+    @note = Note.find(params[:id])
+    @recipe = @note.recipe
     if @note.update(note_params)
-      # Remove all other notes for this recipe and user
-      @recipe.notes.where(user: current_user).where.not(id: @note.id).destroy_all
       redirect_to recipe_path(@recipe), notice: 'Note was successfully updated.'
     else
       render :edit, status: :unprocessable_entity
