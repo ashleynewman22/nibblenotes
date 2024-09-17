@@ -1,5 +1,16 @@
 <%#= link_to recipe_path(@recipes), class: "btn btn-flat" %>
 <!--<div class="banner">-->
+<div class="category-filter">
+  <nav>
+    <ul>
+      <li><%= link_to "All Recipes", recipes_path %></li>
+      <% Category.all.each do |category| %>
+        <li><%= link_to category.name, category_recipes_path(category) %></li>
+      <% end %>
+    </ul>
+  </nav>
+</div>
+
 <div class="container text-center">
   <div class="row justify-content-center">
   <div class="col-sm-8 my-3">
@@ -15,12 +26,50 @@
 </div>
 <h1> Recipe Book </h1>
 </div>
-
-</div>
-  <div class="container">
-    <% @recipes.each do |recipe| %>
-      <%= link_to recipe.title, recipe_path(recipe), class: "link-recipe" %>
-    <% end %>
-     <%= link_to "Add a recipe", new_recipe_path, class: "btn btn-primary" %>
-     <%= link_to "Get AI recipe", ai_chef_path, class: "btn btn-primary" %>
+<!--
+<div class="recipe-list">
+  <%# @recipes.each do |recipe| %>-->
+<!--    <div class="recipe-card">
+      <h2><%#= recipe.title %></h2>
+    </div>
+  <%# end %>-->
+<!--</div>-->
+<div class="container">
+  <div class="recipe-buttons">
+    <%= link_to "Add a recipe", new_recipe_path, class: "btn btn-primary" %>
+    <%= link_to "Get AI recipe", ai_chef_path, class: "btn btn-primary" %>
   </div>
+</div>
+
+<div class="container justify-content-center">
+  <div class="recipe-card">
+  <% if @recipes.any? %>
+      <% @recipes.each do |recipe| %>
+        <div class="recipe-card-info">
+          <%= link_to recipe.title, recipe_path(recipe), class: "link-recipe" %>
+        <div class="recipe-tags">
+          <% if recipe.categories.any? %>
+            <% recipe.categories.each do |category| %>
+              <span class="tag"><%= category.name %></span>
+            <% end %>
+          <% else %>
+            <span class="tag">no categories</span>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+    <% else %>
+      <p>No recipes found</p>
+    <% end %>
+  </div>
+</div>
+<!--
+<div class="recipe-tags">
+  <%# if @recipe.categories.any? %>-->
+    <%# @recipe.categories.each do |category| %>
+<!--      <span class="tag"><%#= category.name %></span>-->
+    <%# end %>
+  <%# else %>
+<!--    <span class="tag">no categories</span>-->
+    <%# end %>
+<!--</div>-->

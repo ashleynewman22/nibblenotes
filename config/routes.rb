@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     collection do
       get 'ai/new', to: 'recipes#ai_new', as: 'ai_new'
       post 'ai', to: 'recipes#ai_create', as: 'ai_create'
+      get 'category/:category_id', to: 'recipes#index', as: :category
     end
   end
   get 'ai_chef', to: 'pages#ai_chef', as: 'ai_chef'
