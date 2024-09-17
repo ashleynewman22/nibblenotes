@@ -1,14 +1,65 @@
-<div class="form-floating mb-3">
-<div class="container mt-5">
-  <div class="row">
-    <div class="col-md-6 offset-md-3">
-      <h1 class="mb-4 text-primary">Edit Category</h1>
-      <%= render 'form', category: @category %>
-      <div class="mt-3">
-        <%= link_to 'Show', @category, class: "btn btn-info me-2" %>
-        <%= link_to 'Back to Categories', categories_path, class: "btn btn-secondary" %>
+<!-- app/views/categories/edit.html.erb -->
+<div class="container my-5">
+  <h1 class="text-center mb-4">Edit Category</h1>
+
+  <%= form_with(model: @category, local: true, html: { class: "needs-validation", novalidate: true }) do |form| %>
+    <% if @category.errors.any? %>
+      <div class="alert alert-danger">
+        <h2><%= pluralize(@category.errors.count, "error") %> prohibited this category from being saved:</h2>
+        <ul>
+          <% @category.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="mb-3">
+      <%= form.label :name, class: "form-label" %>
+      <%= form.text_field :name, class: "form-control", required: true %>
+      <div class="invalid-feedback">
+        Please provide a category name.
       </div>
     </div>
-  </div>
+
+    <div class="mb-3">
+      <%= form.label :photo, class: "form-label" %>
+      <%= form.file_field :photo, class: "form-control", accept: "image/*", direct_upload: true %>
+      <div class="invalid-feedback">
+        Please select an image for the category.
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <% if @category.photo.attached? %>
+        <p>Current photo:</p>
+        <%= cl_image_tag @category.photo.key, class: "img-thumbnail", style: "max-width: 200px;" %>
+      <% end %>
+    </div>
+
+    <div class="text-center">
+      <%= form.submit "Update Category", class: "btn btn-primary", data: { disable_with: 'Updating...' } %>
+      <%= link_to "Cancel", category_path(@category), class: "btn btn-outline-secondary ms-2" %>
+    </div>
+  <% end %>
 </div>
-</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('form');
+    const fileInput = document.querySelector('input[type="file"]');
+    const submitButton = document.querySelector('input[type="submit"]');
+
+    if (form && fileInput && submitButton) {
+      fileInput.addEventListener('change', function() {
+        if (this.value) {
+          submitButton.classList.remove('btn-secondary');
+          submitButton.classList.add('btn-primary');
+        } else {
+          submitButton.classList.remove('btn-primary');
+          submitButton.classList.add('btn-secondary');
+        }
+      });
+    }
+  });
+</script>
