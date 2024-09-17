@@ -40,8 +40,9 @@ categories = [
   { name: "Vegetarian", description: "Meals without meat or fish.", image_url: "https://images.unsplash.com/photo-1597362925123-77861d3fbac7?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" }
 ]
 categories.each do |cat|
-  category = Category.create!(name: cat[:name], description: cat[:description], user_id: [user1.id, user2.id].sample)
+  category = Category.new(name: cat[:name], description: cat[:description], user_id: [user1.id, user2.id].sample)
   category.photo.attach(io: URI.open(cat[:image_url]), filename: File.basename(URI.parse(cat[:image_url]).path))
+  category.save!
 end
 # Create recipes with Cloudinary images
 puts "Creating recipes with Cloudinary images"
