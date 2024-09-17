@@ -34,7 +34,7 @@ class PagesController < ApplicationController
       messages: [{ role: "user", content: "Give me only the method of a recipe for #{@content} using the ingredients and quantities of #{@ai_ingredients}. Without any of your own answer like 'Here is a simple recipe'."}]
     })
     @ai_method = chatgpt_response["choices"][0]["message"]["content"]
-    recipe = Recipe.new(title: @content, ingredients: @ai_ingredients, description: @ai_method)
+    recipe = Recipe.new(title: @content, ingredients: @ai_ingredients, method: @ai_method)
     recipe.user = current_user
     if recipe.save!
       # redirect_to recipe_path(recipe)

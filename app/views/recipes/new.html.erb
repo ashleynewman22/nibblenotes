@@ -1,16 +1,16 @@
 <div class="container recipe-form">
-<div class="container-heading">
-<h2>Add your recipe</h2>
-</div>
-<div class="recipe-info">
-<%= simple_form_for(@recipe) do |f| %>
-  <%= f.input :title %>
-  <%= f.input :ingredients %>
-  <%= f.input :method %>
-  <%= f.input :photo, as: :file %>
-  <%= f.input :category_ids, collection: current_user.categories, as: :check_boxes, label_method: :name, value_method: :id, label: "Select categories" %>
-  <%= f.submit "Add #{@recipe.title}" %>
-  <% end %>
+  <div class="container-heading">
+    <h2>Add your recipe</h2>
   </div>
-    <%= link_to "Back to all recipes", recipes_path, class: "btn btn-primary" %>
+  <div class="recipe-info">
+    <%= simple_form_for(@recipe) do |f| %>
+      <%= f.input :title %>
+      <%= f.input :ingredients, as: :text, input_html: { rows: 15 } %>
+      <%= f.input :method, as: :text, input_html: { rows: 25 } %>
+      <%= f.input :photo, as: :file %>
+      <%= f.input :category_ids, collection: current_user.categories, as: :check_boxes, label_method: :name, value_method: :id, label: "Select categories" %>
+      <%= f.submit "Add #{@recipe.title}" %>
+    <% end %>
+  </div>
+  <%= link_to "Back to all recipes", recipes_path, class: "btn btn-primary" %>
 </div>
