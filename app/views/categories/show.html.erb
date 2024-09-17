@@ -6,10 +6,10 @@
   <div class="row">
     <% @category.recipes.each do |recipe| %>
       <div class="col-md-4 mb-4">
-        <div class="card">
+        <div class="card h-100">
           <div class="card-body">
             <h5 class="card-title"><%= recipe.title %></h5>
-            <p class="card-text"><%= truncate(recipe.description, length: 100) %></p>
+            <p class="card-text"><%= truncate(recipe.method, length: 100) %></p>
             <%= link_to "View Recipe", recipe_path(recipe), class: "btn btn-primary" %>
           </div>
         </div>

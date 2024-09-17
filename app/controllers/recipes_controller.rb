@@ -22,9 +22,18 @@ class RecipesController < ApplicationController
     # end
   end
 
+ # app/controllers/recipes_controller.rb
   def show
     @recipe = Recipe.find(params[:id])
     @notes = @recipe.notes
+  end
+
+  def new_ai_tip
+    @recipe = Recipe.find(params[:recipe])
+    @content = RecipeTipGenerator.new(@recipe).generate_tip
+    @note = Note.new(recipe: @recipe, content: @content, user: current_user)
+    @note.save!
+    redirect_to recipe_path(@recipe)
   end
 
   def new
