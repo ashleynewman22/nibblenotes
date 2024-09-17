@@ -7,11 +7,20 @@ class RecipesController < ApplicationController
 
   def index
     @recipes = Recipe.where(user: current_user)
+
     if params[:query].present?
       @recipes = @recipes.search_by_title_and_ingredients(params[:query])
     end
-  end
 
+    if params[:category_id].present?
+      @category = Category.find(params[:category_id])
+      # @recipes = @recipes.where(category: @category)
+      @recipes = @recipes.joins(:categories).where(categories: { id: @category.id })
+    end
+    # else
+    #   @recipes = Recipe.all
+    # end
+  end
 
  # app/controllers/recipes_controller.rb
   def show

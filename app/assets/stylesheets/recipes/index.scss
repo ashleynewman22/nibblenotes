@@ -3,6 +3,8 @@
   color: rgb(58, 58, 55);
   // font-family: peachi, "hoefler text", baskerville, Georgia, Times, sans-serif;
   font-weight: bold;
+  display: block;
+  margin-bottom: 1rem;
 }
 
 h1 {
@@ -12,4 +14,184 @@ h1 {
   margin-bottom: 30px;
 }
 
-// test
+.recipe-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.recipe-card-info {
+  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  // border-radius: 5px;
+  border: 1px solid #ddd; /* Default border */
+  border-radius: 8px; /* Rounded corners */
+  padding: 1rem;
+  background-color: #ffffff4f; /* White background */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow */
+  transition: all 0.3s ease; /* Smooth transition for hover */
+  max-width: 300px;
+}
+
+.recipe-card-info:hover {
+  border-color: #2B6657;
+  // #ff6347; /* Change border color on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* More pronounced shadow */
+  transform: translateY(-5px); /* Slight upward movement */
+  // background-color: blue;
+  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  // border-radius: 5px;
+  // transform: scaleX(0);
+  // transition: transform 0.3s ease;
+}
+
+.recipe-tags {
+  // margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  gap: 0.5rem;
+  // cursor: none;
+}
+
+.tag {
+  display: inline-block;
+  // display: grid;
+  padding: 0.5rem 1 rem;
+  // margin: 0.25rem;
+  border-radius: 1rem;
+  background-color: #f7d168;
+  // #ff6347; /* Example background color (tomato) */
+  color: #513629; /* Text color */
+  font-size: 0.875rem; /* Adjust font size as needed */
+  // text-transform: capitalize; /* Capitalize tag text */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  cursor:auto;
+}
+
+.tag:hover {
+  background-color: #fd8aaa;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.2s;
+  color: #f40011;
+}
+
+.recipe-buttons {
+  // margin-top: 1rem;
+  margin-bottom: 1rem;
+  // justify-content: right;
+  display: block;
+}
+
+
+/* smallest device */
+@media (min-width: 100px) and (max-width: 575px) {
+  .recipe-card {
+    grid-template-columns: 1fr;
+  }
+  // .recipe-tags {
+  //   gap: 0.25rem;
+  // }
+}
+
+/* medium device, tablets */
+@media (min-width: 768px) {
+  .recipe-card {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  // .recipe-tags {
+  //   gap: 0.25rem;
+  // }
+}
+
+/* large device, desktop screens */
+@media (min-width: 992px) {
+  .recipe-card {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+/* extra large devices, large desktops */
+@media (min-width: 1200px) {
+  .recipe-card {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+/* category filter container */
+.category-filter nav ul {
+  display: flex;
+  flex-wrap: wrap; /* allows categories to wrap on new line if there's lots */
+  justify-content: flex-start; /* will align items to left as default instead of filling up whole bar */
+  // justify-content: center;
+  gap: 0.5rem; /* adds space between items instead of using marging */
+  list-style: none;
+  // margin: 0;
+  padding: 1rem;
+  background-color: #f7f7f7; /* background for filter section */
+}
+
+/* category list items */
+.category-filter nav ul li {
+  // margin: 0 1rem; /* add space between each category */
+  flex: 0; /* prevents items from stretching to fill space */
+}
+
+/* category links */
+.category-filter nav ul li a {
+  text-decoration: none;
+  font-size: 15px;
+  color: #333;
+  padding: 0.5rem;
+  position: relative;
+  transition: color 0.3s ease;
+  white-space: nowrap; /* prevents long names from wrapping */
+  // background-color: lightpink;
+  // border: 1px solid #ddd;
+  // border-radius: 4px;
+}
+
+/* Underline effect on hover */
+.category-filter nav ul li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px; /* thickness of line */
+  background-color: #2B6657; /* color of the underline */
+  // #ff6437;
+  transform: scaleX(0); /* will be hidden by default */
+  transition: transform 0.3s ease; /* makes smoother transition */
+  // border: 1px solid #ddd;
+  // margin-bottom: 1rem;
+  // padding: 1rem;
+}
+
+/* Shows underline on hover */
+.category-filter nav ul li a:hover::after {
+  transform: scaleX(1); /* reveals the underline on hover */
+}
+
+/* changes text colour on hover */
+.category-filter nav ul li a:hover {
+  color: #2B6657; /* same colour as underline */
+  // #ff6437;
+}
+
+
+// @media (max-width: 600px) {
+//   .recipe-card {
+//     gap: 1rem;
+//   }
+
+//   .recipe-tags {
+//     gap: 0.25rem;
+//   }
+
+
+// .tag:hover {
+//   background-color: #ff4500; /* Darker shade on hover */
+//   transform: scale(1.05); /* Slightly enlarge the tag */
+// }
