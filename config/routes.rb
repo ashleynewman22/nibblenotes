@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   get 'ai_chef', to: 'pages#ai_chef', as: 'ai_chef'
   get 'ai_answer', to: 'pages#ai_answer', as: 'ai_answer'
   post 'ai_answer', to: 'pages#ai_answer'
-
+  get 'new_ai_tip', to: 'recipes#new_ai_tip', as: 'new_ai_tip'
   resources :categories
 end
 # resources :notes, only: %i[show edit update]

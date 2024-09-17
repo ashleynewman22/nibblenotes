@@ -1,34 +1,58 @@
 <div class="container recipe-card">
   <h1><%= @recipe.title %></h1>
   <div class="row">
-  <div class="col-8">
-   <h2>Categories</h2>
-  <ul class="category-list">
-    <% @recipe.categories.each do |category| %>
-      <li class="category-name"><%= category.name %></li>
-    <% end %>
-  </ul>
-  <div class="container-ingredients">
-  <h2>Ingredients</h2>
-  <p><%= @recipe.ingredients %></p>
-  </div>
-  <div class="container-description">
-  <h2>Method</h2>
-  <p><%= @recipe.method %></p>
-  </div>
-  </div>
-  <div class="col-4">
-  <div class="container-notes">
-  <h2>Notes</h2>
-    <% @recipe.notes.each do |note| %>
-      <li><%= note.content %></li>
-<%= link_to "Update note", edit_recipe_note_path(@recipe,note), class: "btn btn-primary" %>
-    <% end %>
-    </div>
-    </div>
-    </div>
-<%= link_to "Back to all recipes", recipes_path,  class: "btn btn-primary" %>
-<%= link_to "Add a note", new_recipe_note_path(@recipe), class: "btn btn-primary" %>
-<%= link_to "Edit recipe", edit_recipe_path(@recipe), class: "btn btn-primary" %>
+    <!-- Left section for categories, ingredients, and method -->
+    <div class="col-8">
+      <h2>Categories</h2>
+      <ul class="category-list">
+        <% @recipe.categories.each do |category| %>
+          <li class="category-name"><%= category.name %></li>
+        <% end %>
+      </ul>
 
+      <!-- Ingredients section -->
+      <div class="container-ingredients">
+        <h3>Ingredients</h3>
+        <%= simple_format(@recipe.ingredients) %>
+      </div>
+
+      <!-- Method section -->
+      <div class="container-method">
+        <h3>Method</h3>
+        <%= simple_format(@recipe.method) %>
+      </div>
+
+       Display the recipe photo if attached
+<!--      <div class="recipe-photo">-->
+        <%#= image_tag @recipe.photo.url if @recipe.photo.attached? %>
+<!--      </div>
+-->
+      <!-- Links for navigation -->
+      <%= link_to "Back to all recipes", recipes_path, class: "btn btn-primary" %>
+      <%= link_to "Edit recipe", edit_recipe_path(@recipe), class: "btn btn-primary" %>
+    </div>
+
+    <!-- Right section for notes -->
+    <div class="col-4">
+      <div class="container-notes">
+        <h2>Notes</h2>
+        <!-- Link to generate AI tips -->
+        <%= link_to "Generate helpful AI Tips", new_ai_tip_path(recipe: @recipe), class: "btn btn-secondary" %>
+
+        <!-- Display notes associated with the recipe -->
+        <ul>
+          <% @recipe.notes.each do |note| %>
+            <li>
+              <%= note.content %>
+              <!-- Link to update each note -->
+              <%= link_to "Update note", edit_recipe_note_path(@recipe, note), class: "btn btn-sm btn-primary" %>
+            </li>
+          <% end %>
+        </ul>
+
+        <!-- Link to add a new note -->
+        <%= link_to "Add a note", new_recipe_note_path(@recipe), class: "btn btn-success" %>
+      </div>
+    </div>
+  </div>
 </div>
