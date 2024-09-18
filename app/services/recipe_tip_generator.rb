@@ -10,7 +10,7 @@ class RecipeTipGenerator
       model: "gpt-4o-mini",
       messages: [{
         role: "user",
-        content: "Give me a helpful tip for #{@recipe.title} with the ingredients #{@recipe.ingredients}. The method is #{@recipe.method}. Give me only the helpful tip for the recipe, without any of your own answer like 'Here is a simple helpful tip'."
+        content: "Give me a helpful tip for #{@recipe.title} with the ingredients #{@recipe.ingredients}. The method is #{@recipe.method}. These are the tips I have #{@recipe.notes}. Give me a tip that I don't already have."
       }]
     })
     response["choices"][0]["message"]["content"]
