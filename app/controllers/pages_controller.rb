@@ -19,4 +19,8 @@ class PagesController < ApplicationController
         redirect_to recipes_path  # Handle error, e.g., render :new or redirect_to an error page
       end
   end
+
+  def explore
+    @allrecipes = Recipe.where.not(user: current_user)
+  end
 end
