@@ -41,4 +41,8 @@ class PagesController < ApplicationController
       redirect_to edit_recipe_path(recipe)
     end
   end
+
+  def explore
+    @allrecipes = Recipe.where.not(user: current_user)
+  end
 end

@@ -1,3 +1,22 @@
+.recipe-banner {
+  height: 250px;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  // background-color: lightblue;
+  background-size: cover;
+  background-position: center;
+  h1 {
+    font-family: "hoefler text", baskerville, Georgia, Times, sans-serif;
+    color: white;
+    // rgb(58, 58, 55);
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+}
+
+
 .link-recipe {
   text-decoration: none;
   color: rgb(58, 58, 55);
@@ -7,12 +26,6 @@
   margin-bottom: 1rem;
 }
 
-h1 {
-  font-family: "hoefler text", baskerville, Georgia, Times, sans-serif;
-  color:rgb(58, 58, 55);
-  margin-top: 30px;
-  margin-bottom: 30px;
-}
 
 .recipe-card {
   display: grid;
@@ -20,6 +33,7 @@ h1 {
   grid-gap: 16px;
   justify-content: center;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .recipe-card-info {
@@ -36,6 +50,7 @@ h1 {
 
 .recipe-card-info:hover {
   border-color: #2B6657;
+  text-decoration: none;
   // #ff6347; /* Change border color on hover */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* More pronounced shadow */
   transform: translateY(-5px); /* Slight upward movement */

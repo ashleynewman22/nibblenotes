@@ -1,0 +1,28 @@
+<h1>Explore other people's recipes</h1>
+
+
+<div class="container justify-content-center">
+  <div class="recipe-card">
+  <% if @allrecipes.any? %>
+      <% @allrecipes.each do |recipe| %>
+      <%= link_to recipe_path(recipe) do %>
+        <div class="recipe-card-info">
+          <p class="link-recipe"><%= recipe.title %></p>
+        <div class="recipe-tags">
+          <% if recipe.categories.any? %>
+            <% recipe.categories.each do |category| %>
+              <span class="tag"><%= category.name %></span>
+            <% end %>
+          <% else %>
+            <span class="tag">no categories</span>
+          <% end %>
+        </div>
+        <p><%= recipe.user.username %></p>
+      </div>
+      <% end %>
+    <% end %>
+    <% else %>
+      <p>No recipes found</p>
+    <% end %>
+  </div>
+</div>

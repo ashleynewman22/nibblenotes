@@ -1,0 +1,10 @@
+.fa-pen {
+  font-size: 16px; /* Change the size */
+  color: #ffcc00; /* Change the color */
+  padding-left: 5px; /* Optional: add spacing between the note content and the icon */
+  transition: color 0.3s ease; /* Smooth color change on hover */
+}
+
+.fa-pen:hover {
+  color: #ff6600; /* Change color on hover */
+}

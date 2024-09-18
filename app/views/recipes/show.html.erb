@@ -29,7 +29,13 @@
 -->
       <!-- Links for navigation -->
       <%= link_to "Back to all recipes", recipes_path, class: "btn btn-primary" %>
+    <% if @recipe.user == current_user %>
       <%= link_to "Edit recipe", edit_recipe_path(@recipe), class: "btn btn-primary" %>
+    <% else %>
+      <%= button_to recipes_path, params: { recipe: { title: @recipe.title, ingredients: @recipe.ingredients, method: @recipe.method, category_ids: [] } } do %>
+        <p>Add to my recipe book</p>
+      <% end %>
+    <% end %>
     </div>
 
     <!-- Right section for notes -->
@@ -37,21 +43,31 @@
       <div class="container-notes">
         <h2>Notes</h2>
         <!-- Link to generate AI tips -->
+        <% if @recipe.user == current_user %>
         <%= link_to "Generate helpful AI Tips", new_ai_tip_path(recipe: @recipe), class: "btn btn-secondary" %>
-
+        <% end %>
         <!-- Display notes associated with the recipe -->
         <ul>
           <% @recipe.notes.each do |note| %>
             <li>
               <%= note.content %>
               <!-- Link to update each note -->
-              <%= link_to "Update note", edit_recipe_note_path(@recipe, note), class: "btn btn-sm btn-primary" %>
+              <% if @recipe.user == current_user %>
+                <%= link_to edit_recipe_note_path(@recipe, note) do %>
+                  <i class="fas fa-light fa-pen"></i>
+                <% end %>
+                <%= button_to recipe_note_path(@recipe, note), method: :delete, form:{ data: { turbo_confirm: "Are you sure?" }}, class: "btn-delete" do %>
+                  <i class="fas fa-regular fa-trash"></i>
+                <% end %>
+              <% end %>
             </li>
           <% end %>
         </ul>
 
         <!-- Link to add a new note -->
+        <% if @recipe.user == current_user %>
         <%= link_to "Add a note", new_recipe_note_path(@recipe), class: "btn btn-success" %>
+        <% end %>
       </div>
     </div>
   </div>

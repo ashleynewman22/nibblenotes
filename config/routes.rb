@@ -8,17 +8,19 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
   get "/about", to: "pages#about", as: :about
   resources :recipes do
-    resources :notes, only: %i[new create show edit update]
+    resources :notes, only: %i[new create show edit update destroy]
     collection do
       get 'ai/new', to: 'recipes#ai_new', as: 'ai_new'
       post 'ai', to: 'recipes#ai_create', as: 'ai_create'
       get 'category/:category_id', to: 'recipes#index', as: :category
     end
   end
+  # resources :notes, only: [:destroy]
   get 'ai_chef', to: 'pages#ai_chef', as: 'ai_chef'
   get 'ai_answer', to: 'pages#ai_answer', as: 'ai_answer'
   post 'ai_answer', to: 'pages#ai_answer'
   get 'new_ai_tip', to: 'recipes#new_ai_tip', as: 'new_ai_tip'
+  get 'explore', to: 'pages#explore'
   resources :categories
 end
 # resources :notes, only: %i[show edit update]

@@ -20,10 +20,12 @@ User.destroy_all
 # Create users
 puts "Creating Users"
 user1 = User.create!(
+  username: "bernardman",
   email: "bernard@gmail.com",
   password: "bernard@gmail.com"
 )
 user2 = User.create!(
+  username: "ashleynew",
   email: "ashleynew@gmail.com",
   password: "ashleynew@gmail.com"
 )

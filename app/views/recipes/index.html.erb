@@ -11,6 +11,16 @@
   </nav>
 </div>
 
+<!--<div class="container">-->
+  <div class="recipe-banner"
+      style="background-image: url(https://res.cloudinary.com/dhejoj1is/image/upload/z7yjolgjdvysi0gvtmtt.jpg);">
+      <h1> Recipe Book </h1>
+  </div>
+<!--</div>-->
+
+
+<%#= cl_image_path('z7yjolgjdvysi0gvtmtt') %>
+<!---->
 <div class="container text-center">
   <div class="row justify-content-center">
   <div class="col-sm-8 my-3">
@@ -24,7 +34,6 @@
     <% end %>
   </div>
 </div>
-<h1> Recipe Book </h1>
 </div>
 <!--
 <div class="recipe-list">
@@ -37,7 +46,7 @@
 <div class="container">
   <div class="recipe-buttons">
     <%= link_to "Add a recipe", new_recipe_path, class: "btn btn-primary" %>
-    <%= link_to "Get AI recipe", ai_chef_path, class: "btn btn-primary" %>
+    <%= link_to "Get AI recipe", ai_chef_path, class: "btn btn-secondary" %>
   </div>
 </div>
 
@@ -45,8 +54,10 @@
   <div class="recipe-card">
   <% if @recipes.any? %>
       <% @recipes.each do |recipe| %>
+        <%= link_to recipe_path(recipe) do %>
         <div class="recipe-card-info">
-          <%= link_to recipe.title, recipe_path(recipe), class: "link-recipe" %>
+          <p class="link-recipe"><%= recipe.title %></p>
+          <%#= link_to recipe.title, recipe_path(recipe), class: "link-recipe" %>
         <div class="recipe-tags">
           <% if recipe.categories.any? %>
             <% recipe.categories.each do |category| %>
@@ -57,6 +68,7 @@
           <% end %>
         </div>
       </div>
+      <% end %>
     <% end %>
     <% else %>
       <p>No recipes found</p>
