@@ -1,39 +1,77 @@
-<nav class="navbar navbar-expand-sm navbar-light bg-light">
-  <div class="container-fluid">
-    <%= link_to "#", class: "navbar-brand" do %>
-      <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png", height: 40 %>
-    <% end %>
 
+    <style>
+        body {
+            background-color: #f5f5f5; /* Light grey */
+        }
+        .navbar {
+            background: linear-gradient: #7C7C7C/* Black to dark gray gradient */
+        }
+        .navbar-nav .nav-link {
+            font-weight: bold;
+            color: #d4af37 !important; /* Greyish gold */
+        }
+        .navbar-nav .nav-link:hover {
+            color: #b8860b !important; /* Darker gold */
+        }
+        .navbar-brand {
+            color: #d4af37; /* Greyish gold */
+        }
+        .dropdown-menu {
+            background-color: #e0e0e0; /* Light grey */
+        }
+        .dropdown-item {
+            color: #d4af37; /* Greyish gold */
+        }
+        .dropdown-item:hover {
+            background-color: #b8860b !important; /* Darker gold */
+            color: #ffffff !important; /* White text on hover */
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-sm">
+  <div class="container-fluid">
+    <!-- Navbar Toggle Button for small screens -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ms-auto">
-        <% if current_user %>
-          <li class="nav-item">
-            <%= link_to "My Recipe Book", recipes_path, class: "nav-link" %>
+    <!-- Centered Navbar Brand (Nibble Notes) -->
+    <div class="navbar-collapse collapse">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item d-flex">
+          <a href="#" class="nav-link me-2 text-center">Nibble Notes</a>
           </li>
-          <li class="nav-item">
-            <li class="nav-item">
-            <%= link_to "Add a Recipe", new_recipe_path, class: "nav-link" %>
-          </li>
-            <%= link_to "Categories", categories_path, class: "nav-link" %>
-          </li>
-            <%= link_to "About Us", about_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Log out", destroy_user_session_path, data: { turbo_method: :delete }, class: "nav-link" %>
-          </li>
-        <% else %>
-          <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>
-          </li>
-        <% end %>
+      </ul>
+    </div>
+    <!-- Right-aligned Navbar Links -->
+    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a href="/recipes" class="nav-link">Recipe Book</a>
+        </li>
+        <li class="nav-item">
+          <a href="/categories" class="nav-link">Categories</a>
+        </li>
+         <li class="nav-item">
+          <a href="/explore" class="nav-link">Explore</a>
+        </li>
+        <!-- Dropdown Menu -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fas fa-bars"></i>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+            <li><a href="/about" class="dropdown-item">About Us</a></li>
+            <li><a href="/recipes/new" class="dropdown-item">Add a Recipe</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a href="/users/sign_out" class="dropdown-item" data-turbo-method="delete">Log out</a></li>
+          </ul>
+        </li>
       </ul>
     </div>
   </div>
 </nav>
+<!-- Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
