@@ -1,11 +1,148 @@
-.btn-purple {
-  background-color: purple;
-  color: white;
+// .btn-purple {
+//   background-color: purple;
+//   color: white;
+// }
+
+
+.btn-primary {
+  border-color: $dark-green;
+  // $dark-green;
+  background-color: $dark-green;
+  // $light-brown;
+  color: whitesmoke;
+}
+
+
+.btn-primary:hover {
+  background-color: $dark-green-lighter;
+  color:white;
+  border-color: $dark-green-lighter;
+}
+
+.btn-primary-link {
+  border-color: $dark-green;
+  // $dark-green;
+  background-color: $dark-green;
+  // $light-brown;
+  color: whitesmoke;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-left: 10px;
+  padding-left: 8px;
+  padding-right: 8px;
+  text-align: center;
+  letter-spacing: 0.5px;
+  border-radius: 100px;
+  font-size: 14px;
+}
+
+.btn-primary-link:hover {
+  background-color: $dark-green-lighter;
+  color:white;
+  border-color: $dark-green-lighter;
+}
+
+
+.buttons-container {
+  display: flex;
+  // justify-content: center; // Align buttons to the right
+  margin-bottom: 20px; // Space between buttons and recipe cards
+  // padding-right: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  // background-color: rgb(244, 243, 234);
 }
 
 .btn-secondary {
+  color: white;
   background-color: $dark-green;
-  border-radius: 10px;
-  font-family:Arial, Helvetica, sans-serif;
-  font-size: 15px;
+  font-family: Poppins, sans-serif;
+  // "Work Sans", Helvetica, sans-serif;
+  // "Poppins", sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  border-radius: 100px;
+  // border-bottom-left-radius: 100px;
+  // border-bottom-right-radius: 100px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-left: 10px;
+  padding-left: 8px;
+  padding-right: 8px;
+  text-align: center;
 }
+
+.btn-secondary:hover {
+  color: $dark-green;
+  background-color: rgba(255, 255, 255, 0.671);
+  // transition: 0.3s ease;
+  // transform: translateY(-3px);
+  transition-timing-function: ease-in-out;
+  // transition-duration: 0.2s;
+  // transition-timing-function: ease;
+  transition-duration: 0.15s, 0.15s;
+}
+
+.btn-main {
+  // background-color: $light-yellow;
+  background-color: $light-yellow;
+  color: whitesmoke;
+  font-family: Poppins, sans-serif;
+  font-size: 14px;
+  font-weight: 200px;
+  letter-spacing: 0.5px;
+  border-radius: 100px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-left: 0px;
+  padding-left: 8px;
+  padding-right: 8px;
+  // opacity: 44%;
+}
+
+.btn-main:hover {
+  color: $light-brown;
+  background-color: white;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.15s, 0.15s;
+  border: 1px solid $light-brown;
+}
+
+.btn-notes {
+  background-color: transparent;
+  border-color: $light-brown;
+  border-width: 2px;
+  // border-top-color:  $light-brown;
+  // border-bottom-color: $light-brown;
+  color: $light-brown;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 100px;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  font-family: Poppins, sans-serif;
+  font-size: 13px;
+  // display: flex;
+  text-align: center;
+  // flex-wrap: wrap;
+  justify-content: center;
+  // position: relative;
+}
+
+.btn-notes:hover {
+  background-color: rgb(244, 243, 234);
+  border-left-color:  $light-brown;
+  border-right-color: $light-brown;
+  color: $light-brown;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.15s, 0.15s;
+}
+// .btn-edit {
+//   background: transparent;
+//   border: none;
+//   color: #f40011;
+// }

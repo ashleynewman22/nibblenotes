@@ -1,3 +1,7 @@
+// .background {
+//   background-color: rgb(241, 240, 224);
+// }
+
 .recipe-banner {
   height: 250px;
   justify-content: center;
@@ -7,9 +11,14 @@
   // background-color: lightblue;
   background-size: cover;
   background-position: center;
+  // background-blend-mode: multiply;
+  // box-shadow:  ;
   h1 {
-    font-family: "hoefler text", baskerville, Georgia, Times, sans-serif;
-    color: white;
+    font-family: Poppins, sans-serif;
+    // "hoefler text", baskerville, Georgia, Times, sans-serif;
+    color: whitesmoke;
+    letter-spacing: 1px;
+    font-weight: 400;
     // rgb(58, 58, 55);
     margin-top: 30px;
     margin-bottom: 30px;
@@ -26,12 +35,18 @@
   margin-bottom: 1rem;
 }
 
+.recipe-block {
+  text-decoration: none;
+  text-align: center;
+  margin-top: 10px;
+  background-color: rgb(244, 243, 234);
+}
 
 .recipe-card {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
-  justify-content: center;
+  // justify-content: center;
   cursor: pointer;
   text-decoration: none;
 }
@@ -39,7 +54,7 @@
 .recipe-card-info {
   // box-shadow: 0 0 15px rgba(0,0,0,0.2);
   // border-radius: 5px;
-  border: 1px solid #ddd; /* Default border */
+  // border: 1px solid #ddd; /* Default border */
   border-radius: 8px; /* Rounded corners */
   padding: 1rem;
   background-color: #ffffff4f; /* White background */
@@ -48,11 +63,21 @@
   max-width: 300px;
 }
 
+.recipe-card-info p {
+  color:rgb(58, 58, 55);
+  font-weight: normal;
+  font-family: Poppins, sans-serif;
+  font-size: 14px;
+}
 .recipe-card-info:hover {
-  border-color: #2B6657;
+  border-color: $light-gray;
+  background-color: rgb(244, 243, 234);
+  // background-color: rgb(241, 240, 224);
+  // #2B6657;
   text-decoration: none;
+  // border: 1px solid #ddd;
   // #ff6347; /* Change border color on hover */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* More pronounced shadow */
+  // box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* More pronounced shadow */
   transform: translateY(-5px); /* Slight upward movement */
   // background-color: blue;
   // box-shadow: 0 0 15px rgba(0,0,0,0.2);
@@ -72,13 +97,14 @@
 
 .tag {
   display: inline-block;
-  // display: grid;
-  padding: 0.5rem 1 rem;
+  // padding: 0.5rem 1 rem;
+  padding-left: 8px;
+  padding-right: 8px;
   // margin: 0.25rem;
   border-radius: 1rem;
-  background-color: #f7d168;
-  // #ff6347; /* Example background color (tomato) */
-  color: #513629; /* Text color */
+  background-color: $light-yellow;
+  // border: 2px solid #fd8aaa;
+  color: rgb(58, 58, 55); /* Text color */
   font-size: 0.875rem; /* Adjust font size as needed */
   // text-transform: capitalize; /* Capitalize tag text */
   transition: background-color 0.3s ease, transform 0.3s ease;
