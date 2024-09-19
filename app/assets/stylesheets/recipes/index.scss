@@ -118,11 +118,14 @@
   color: #f40011;
 }
 
-.recipe-buttons {
+.buttons-container {
   // margin-top: 1rem;
   margin-bottom: 1rem;
-  // justify-content: right;
-  display: block;
+  justify-content: left;
+  margin-top: 5px;
+  // padding-left: 10px;
+  // padding-right: 10px;
+  // margin-left: 3px;
 }
 
 
@@ -160,17 +163,22 @@
   }
 }
 
+// .nav {
+//   border-bottom-color: #2B6657;
+//   // border-color: $dark-green-lighter;
+//   border-width: 10px;
+// }
 /* category filter container */
 .category-filter nav ul {
   display: flex;
   flex-wrap: wrap; /* allows categories to wrap on new line if there's lots */
   justify-content: flex-start; /* will align items to left as default instead of filling up whole bar */
-  // justify-content: center;
   gap: 0.5rem; /* adds space between items instead of using marging */
   list-style: none;
-  // margin: 0;
   padding: 1rem;
   background-color: #f7f7f7; /* background for filter section */
+  // border-bottom-color: #2B6657;
+  // border-bottom-width: 10px;
 }
 
 /* category list items */

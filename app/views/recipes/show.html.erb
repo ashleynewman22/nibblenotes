@@ -1,5 +1,9 @@
-<div class="container recipe-container">
+
+<div class="recipe-header justify-content-center">
   <h1><%= @recipe.title %></h1>
+</div>
+
+<div class="container recipe-container">
   <div class="row">
     <!-- Left section for categories, ingredients, and method -->
     <div class="col-8">
@@ -28,7 +32,8 @@
 <!--      </div>
 -->
       <!-- Links for navigation -->
-      <%= link_to "Back to all recipes", recipes_path, class: "btn btn-primary-link" %>
+      <%#= link_to "Back to all recipes", recipes_path, class: "btn btn-primary-link" %>
+    <div class="container-edit">
     <% if @recipe.user == current_user %>
       <%= link_to edit_recipe_path(@recipe), class: "btn btn-edit" do %>
       <i class="fas fa-light fa-pen"></i>
@@ -39,6 +44,8 @@
       <% end %>
     <% end %>
     </div>
+    </div>
+
 
     <!-- Right section for notes -->
     <div class="col-4">
@@ -68,7 +75,9 @@
 
         <!-- Link to add a new note -->
         <% if @recipe.user == current_user %>
-        <%= link_to "Add a note", new_recipe_note_path(@recipe), class: "btn btn-success" %>
+          <%= link_to new_recipe_note_path(@recipe), class: "btn btn-add" do %>
+            <i class="fas fa-regular fa-circle-plus"></i>
+          <% end %>
         <% end %>
       </div>
     </div>
