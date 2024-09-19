@@ -1,13 +1,19 @@
 .category-name {
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-size: 16px;
-  font-weight: lighter;
-  background-color: rgb(242, 172, 164);
+  font-family: Poppins, sans-serif;
+  // font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  // background-color: rgb(242, 172, 164);
+  background-color: $light-yellow;
+  color: rgb(58, 58, 55);
   // letter-spacing: 2.1px;
   display: inline-block;
   cursor: auto;
   background-clip: border-box;
   border-radius: 20px;
+  padding-left: 8px;
+  padding-right: 8px;
+  // position: relative;
 }
 
 .category-name:hover {
@@ -27,7 +33,7 @@
 }
 
 .recipe-container h2 {
-  font-family: peachi, "hoefler text", baskerville, Georgia, Times, sans-serif;
+  // font-family: peachi, "hoefler text", baskerville, Georgia, Times, sans-serif;
   font-size: 25px;
   color:rgb(41, 41, 38);
 }
@@ -38,7 +44,7 @@
 }
 
 .container-ingredients {
-  margin-top: 25px;
+  margin-top: 15px;
   margin-bottom: 25px;
 }
 
@@ -50,26 +56,49 @@
 .container-notes {
   background-color: #fae8b6b9;
   // background-color: rgba(246, 255, 167, 0.781);
-
   // background-color: rgb(242, 242, 242);
   border-top: 20px;
   border-radius: 5px;
-  // text-align: center;
   color:rgb(41, 41, 38);
+  // justify-content: center;
   // opacity: .7;
 }
 
 .container-notes h2 {
   text-align: center;
-  margin-bottom: 10px;
+  // margin-bottom: 15px;
+  // margin-top: 15px;
+  padding-top: 15px;
+  padding-bottom: 10px;
+  font-family: Poppins, sans-serif;
+  font-size: 18px;
+  background-color: rgba(244, 243, 234, 0.555);
+  // color: rgba(0, 0, 0, 0.505);
 }
 
-.btn-primary {
-  border-radius: 5px;
+.container-notes p {
+  font-size: 15px;
 }
+// .btn-primary {
+//   border-radius: 5px;
+// }
 
 .btn-delete {
   background: transparent;
   border: none;
-  color: lightgray;
+  color: $light-yellow;
+}
+
+.btn-delete:hover {
+  background:transparent;
+  border: none;
+  color: #f40011;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.2s;
+}
+
+.btn-edit {
+  background: transparent;
+  border: none;
+  color: #f40011;
 }
