@@ -51,6 +51,11 @@
       <% @recipes.each do |recipe| %>
         <%= link_to recipe_path(recipe), class: "recipe-block" do %>
         <div class="recipe-card-info">
+            <% if recipe.photo.key %>
+              <%= cl_image_tag recipe.photo.key, class: "recipe-photo" %>
+            <% else  %>
+              <img class="recipe-photo" src="https://res.cloudinary.com/dhejoj1is/image/upload/z7yjolgjdvysi0gvtmtt.jpg" alt="Place an image here">
+            <% end %>
           <p class="link-recipe"><%= recipe.title %></p>
           <%#= link_to recipe.title, recipe_path(recipe), class: "link-recipe" %>
         <div class="recipe-tags">
