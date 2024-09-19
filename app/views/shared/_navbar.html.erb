@@ -26,10 +26,18 @@
             background-color: #b8860b !important; /* Darker gold */
             color: #ffffff !important; /* White text on hover */
         }
+        .navbar-logo {
+            height: 40px; /* Adjust the height of the logo */
+            width: auto;  /* Keep aspect ratio */
+            object-fit: contain; /* Ensures the logo fits well without stretching */
+        }
     </style>
 </head>
 <body>
 <nav class="navbar navbar-expand-sm sticky-top bg-light">
+  <a class="navbar-brand" href="/">
+      <img src="/assets/nibblenotes_logo-removebg-preview (1).png" alt="Nibble Notes Logo" class="navbar-logo">
+    </a>
   <div class="container-fluid">
     <!-- Navbar Toggle Button for small screens -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
