@@ -1,21 +1,65 @@
-<h1>What ingredients do you have?</h1>
-<!--<form action="<%#= ai_answer_path %>">
-  <input type="text" name="ingredients">
-  <button>Get my recipe</button>
-</form>-->
+<div class="form-container">
+  <h1>What ingredients do you have?</h1>
 
+  <%= simple_form_for :recipe, url: ai_answer_path, method: :post do |f| %>
+    <%= f.input :ingredients, label: "Enter ingredients", input_html: { class: 'form-control' } %>
 
-<%= simple_form_for :recipe, url: ai_answer_path, method: :post do |f| %>
-  <%= f.input :ingredients, label: "Enter ingredients" %>
+    <div class="recipe-type">
+      <label>Choose Recipe Type:</label>
+      <div class="radio-buttons">
+        <%= f.radio_button :recipe_type, "simple & sweet", checked: true, class: 'form-check-input' %> Simple & Sweet
+        <%= f.radio_button :recipe_type, "spice it up", class: 'form-check-input' %> Spice it up
+      </div>
+    </div>
 
-  <div class="recipe-type">
-    <label>Choose Recipe Type:</label>
-    <%= f.radio_button :recipe_type, "simple & sweet", checked: true %> Simple & Sweet
-    <%= f.radio_button :recipe_type, "spice it up" %> Spice it up
-  </div>
+    <%= f.submit "Get My Recipe", class: "btn btn-primary" %>
+  <% end %>
+</div>
 
-  <%= f.submit "Get My Recipe" %>
-<% end %>
+<style>
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    text-align: center;
+  }
 
-<!--simple & sweet vs spice it up-->
-<!--casual/simple vs master chef mode-->
+  .form-container h1 {
+    margin-bottom: 20px;
+    color: #444; /* adjust color as needed */
+  }
+
+  .form-container form {
+    width: 100%;
+    max-width: 500px; /* increased max-width for a larger container */
+    padding: 30px; /* increased padding for more space */
+    background-color: #eefcce; /* use your preferred background color */
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .form-container .recipe-type {
+    margin-top: 20px; /* increased margin for better spacing */
+  }
+
+  .form-container .recipe-type label {
+    font-weight: bold;
+  }
+
+  .form-container .radio-buttons {
+    margin-top: 15px; /* adjusted margin for better spacing */
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .form-container .radio-buttons input {
+    margin-right: 10px;
+  }
+
+  .form-container .btn {
+    width: 100%;
+    margin-top: 20px;
+  }
+</style>
