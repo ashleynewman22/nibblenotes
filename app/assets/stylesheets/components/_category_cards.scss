@@ -80,3 +80,42 @@
   }
 
 }
+#categoryinfo {
+  height: calc(100vh - 56px - 104px);
+  position: sticky;
+  top: 56px;
+}
+
+.category-list {
+  height: calc(100vh - 56px - 104px);
+  overflow-y: scroll;
+  width: 80;
+}
+
+.placeholder-image {
+    border: 2px dashed #ccc;
+    color: #666;
+    font-size: 0.9rem;
+    background-color: #f0f0f0;
+  }
+  .card {
+    transition: transform 0.2s ease-in-out;
+    overflow: hidden;
+  }
+  .card:hover {
+    transform: scale(1.03);
+  }
+  .rounded-card {
+    border-radius: 15px;
+  }
+  .card-img-container {
+    overflow: hidden;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+  }
+  .card-img-top {
+    transition: transform 0.3s ease-in-out;
+  }
+  .card:hover .card-img-top {
+    transform: scale(1.1);
+  }
