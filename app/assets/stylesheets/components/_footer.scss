@@ -2,3 +2,16 @@
   margin-top: auto; /* Push the footer to the bottom */
   bottom: 0
 }
+
+.container-footer {
+  background-color: $light-yellow-banner;
+  color: $light-brown;
+  font-size: 15px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  // font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+.container-footer a {
+  color: $dark-green-lighter;
+}

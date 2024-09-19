@@ -44,15 +44,15 @@
 }
 
 
-.buttons-container {
-  display: flex;
-  // justify-content: center; // Align buttons to the right
-  margin-bottom: 20px; // Space between buttons and recipe cards
-  // padding-right: 20px;
-  padding-left: 10px;
-  padding-right: 10px;
-  // background-color: rgb(244, 243, 234);
-}
+// .buttons-container {
+//   display: flex;
+//   // justify-content: center; // Align buttons to the right
+//   margin-bottom: 20px; // Space between buttons and recipe cards
+//   // padding-right: 20px;
+//   padding-left: 10px;
+//   padding-right: 10px;
+//   // background-color: rgb(244, 243, 234);
+// }
 
 .btn-secondary {
   color: white;
@@ -146,3 +146,14 @@
 //   border: none;
 //   color: #f40011;
 // }
+.btn-add {
+  color: $dark-green-banner;
+  background-color: transparent;
+  font-size: 20px;
+}
+
+.btn-add:hover {
+  color: $dark-green-lighter;
+  background-color: transparent;
+  transition: color 0.3s ease;
+}

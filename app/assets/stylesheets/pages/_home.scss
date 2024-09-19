@@ -3,16 +3,33 @@
 //   background: rgba(255,224,27,0.15);
 // }
 .banner {
-  background-color: #d8e183;
+  // background-color: #d8e183;
   padding: 110px 0;
+  background-image: url("https://res.cloudinary.com/dhejoj1is/image/upload/v1726751939/yellow_circle_qim3n1");
 }
 
-.banner h1 {
-  color: black;
-  opacity: .8;
-  padding-left: 40px;
-  margin: 0;
+.banner {
+  h1 {
+    color: #FFFFFF;
+    // opacity: .8;
+    padding-left: 40px;
+    margin: 0;
+    font-family: Poppins, sans-serif;
+    font-size: 45px;
+    font-weight:500;
+    letter-spacing: 17%;
+    text-align: center;
+  }
+  h2 {
+    color: #513629;
+    font-family: Poppins, sans-serif;
+    font-size: 20px;
+    opacity: .7;
+    text-align: center;
+  }
 }
+
+
 
 .wavy-link {
   font-family: Arial, Helvetica, sans-serif; /* You might need to change this to a valid font-family */

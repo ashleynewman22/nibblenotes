@@ -10,3 +10,74 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+.navbar-style {
+  padding-bottom: 3px;
+  padding-top: 6px;
+  background-color: $light-yellow-banner;
+  // rgb(247, 243, 243);
+  a {
+    color:rgb(41, 41, 38);
+    font-weight: 300px;
+    font-size: 16px;
+  }
+
+  a:hover {
+    color: $light-yellow;
+    font-weight: 600;
+    transition-timing-function:ease-out;
+    transition: color 0.3s ease;
+  }
+
+  p {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color:#ff006fcc;
+    font-family: Roboto, sans-serif;
+    text-align: left;
+    letter-spacing: 0.8px;
+    font-size: 16px;
+    // background-color: $light-yellow;
+    border-radius: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+
+  p:hover {
+    color: $light-yellow;
+    font-weight: bold;
+    transition-timing-function: ease-in-out;
+    transition-duration: 0.15s, 0.15s;
+  }
+}
+
+// ;body {
+//   background-color: #f5f5f5; /* Light grey */
+// }
+// // .navbar {
+//   background: linear-gradient: #7C7C7C/* Black to dark gray gradient */
+// }
+// .navbar-nav .nav-link {
+//   font-weight: bold;
+//   color: #d4af37 !important; /* Greyish gold */
+// }
+// .navbar-nav .nav-link:hover {
+//   color: #b8860b !important; /* Darker gold */
+// }
+// .navbar-brand {
+//   color: #d4af37; /* Greyish gold */
+// }
+// .dropdown-menu {
+//   background-color: #e0e0e0; /* Light grey */
+// }
+// .dropdown-item {
+//   color: #d4af37; /* Greyish gold */
+// }
+// .dropdown-item:hover {
+//   background-color: #b8860b !important; /* Darker gold */
+//   color: #ffffff !important; /* White text on hover */
+// }
+// </style>

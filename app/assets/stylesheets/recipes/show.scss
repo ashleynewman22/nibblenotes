@@ -23,21 +23,73 @@
   color: #f40011;
 }
 // rgb(58, 58, 55);
-.recipe-container h1 {
-  font-size: 36px;
-  font-family: peachi, "hoefler text", baskerville, Georgia, Times, sans-serif;
-  text-align: center;
-  color:rgb(58, 58, 55);
-  margin-top: 30px;
-  margin-bottom: 30px;
+// .recipe-container h1 {
+  // font-size: 36px;
+  // font-family: peachi, "hoefler text", baskerville, Georgia, Times, sans-serif;
+  // text-align: center;
+  // color: whitesmoke;
+  // margin-top: 30px;
+  // margin-bottom: 30px;
+  // background-color: $dark-green-banner;
+  // display: flex;
+  // // background-color: lightblue;
+  // background-size: cover;
+  // background-position: center;
+  // margin-top: 15px;
+
+.recipe-header {
+  h1 {
+    font-size: 36px;
+    font-family: peachi, "hoefler text", baskerville, Georgia, Times, sans-serif;
+    // text-align: center;
+    color: whitesmoke;
+    // justify-content: center;
+    // text-align: center;
+    // align-items: center;
+    // display: flex;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  background-color: $dark-green-banner;
+  background-color: fill;
+  padding-bottom: 14px;
+  padding-top: 14px;
+  margin-top: 5px;
 }
 
 .recipe-container h2 {
   // font-family: peachi, "hoefler text", baskerville, Georgia, Times, sans-serif;
-  font-size: 25px;
+  font-size: 23px;
+  font-family: Poppins, sans-serif;
+  font-weight: normal;
   color:rgb(41, 41, 38);
+  margin-left: 8px;
+  letter-spacing: 0.5px;
 }
 
+.recipe-container h3 {
+  font-size: 23px;
+  font-family: Poppins, sans-serif;
+  font-weight: normal;
+  color:rgb(41, 41, 38);
+  margin-left: 8px;
+  letter-spacing: 0.5px;
+}
+
+.recipe-header {
+  font-size: 36px;
+  font-family: peachi, "hoefler text", baskerville, Georgia, Times, sans-serif;
+  text-align: center;
+  color: whitesmoke;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  background-color: $dark-green-banner;
+  display: flex;
+  // background-color: lightblue;
+  background-size: cover;
+  background-position: center;
+  margin-top: 15px;
+}
 .category-list {
   margin-bottom: 25px;
   margin-top: 15px;
