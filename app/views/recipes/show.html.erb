@@ -1,4 +1,4 @@
-
+<div class="recipe-show-page">
 <div class="recipe-header justify-content-center">
   <h1><%= @recipe.title %></h1>
 </div>
@@ -6,9 +6,9 @@
 <div class="container recipe-container">
   <div class="row">
     <!-- Left section for categories, ingredients, and method -->
-    <div class="col-8">
-      <h2>Categories</h2>
-      <ul class="category-list">
+    <div class="col-7 p-5">
+    <h2>Categories</h2>
+      <ul class="category-tag-list">
         <% @recipe.categories.each do |category| %>
           <li class="category-name"><%= category.name %></li>
         <% end %>
@@ -17,7 +17,9 @@
       <!-- Ingredients section -->
       <div class="container-ingredients">
         <h3>Ingredients</h3>
+        <div class="px-4">
         <%= simple_format(@recipe.ingredients) %>
+        </div>
       </div>
 
       <!-- Method section -->
@@ -26,7 +28,6 @@
         <%= simple_format(@recipe.method) %>
       </div>
 
-       Display the recipe photo if attached
 <!--      <div class="recipe-photo">-->
         <%#= image_tag @recipe.photo.url if @recipe.photo.attached? %>
 <!--      </div>
@@ -48,14 +49,14 @@
 
 
     <!-- Right section for notes -->
-    <div class="col-4">
+    <div class="col-5">
+     <% if @recipe.photo.key %>
+              <%= cl_image_tag @recipe.photo.key, class: "image-recipe-show" %>
+            <% else  %>
+              <img class="image-recipe-show" src="https://res.cloudinary.com/dhejoj1is/image/upload/z7yjolgjdvysi0gvtmtt.jpg" alt="Place an image here">
+            <% end %>
       <div class="container-notes">
         <h2>Notes</h2>
-        <!-- Link to generate AI tips -->
-        <% if @recipe.user == current_user %>
-        <%= link_to "Generate AI Cooking Tips", new_ai_tip_path(recipe: @recipe), class: "btn btn-notes" %>
-        <% end %>
-        <!-- Display notes associated with the recipe -->
         <ul>
           <% @recipe.notes.each do |note| %>
             <li>
@@ -79,6 +80,12 @@
             <i class="fas fa-regular fa-circle-plus"></i>
           <% end %>
         <% end %>
+        </div>
+        <div class="container-ai-tips">
+        <% if @recipe.user == current_user %>
+        <%= link_to "Generate AI Cooking Tips", new_ai_tip_path(recipe: @recipe), class: "btn btn-tips-ai" %>
+        <% end %>
+        </div>
       </div>
     </div>
   </div>

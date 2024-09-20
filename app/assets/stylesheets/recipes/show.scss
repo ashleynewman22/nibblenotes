@@ -1,7 +1,13 @@
+.recipe-show-page {
+  background-color: $background-soft;
+  // #eaf3e0;
+  // #f4f1e0;
+}
+
 .category-name {
   font-family: Poppins, sans-serif;
   // font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: normal;
   // background-color: rgb(242, 172, 164);
   background-color: $light-yellow;
@@ -22,6 +28,7 @@
   transition-duration: 0.2s;
   color: #f40011;
 }
+
 // rgb(58, 58, 55);
 // .recipe-container h1 {
   // font-size: 36px;
@@ -37,29 +44,42 @@
   // background-position: center;
   // margin-top: 15px;
 
+.image-recipe-show {
+  width: 100%;
+  height: 350px;
+  object-position: center;
+  object-fit: cover;
+  margin-bottom: 16px;
+  overflow-y: hidden;
+}
+
 .recipe-header {
+    // font-family: peachi, "hoefler text", baskerville, Georgia, Times, sans-serif;
+    text-align: center;
+    // color: whitesmoke;
+    margin-top: 20px;
+    margin-bottom: 25px;
+    background-color: $dark-green-banner;
+    background-color: fill;
+    display: flex;
+    // background-color: lightblue;
+    // background-size: cover;
+    // background-position: center;
+    // margin-top: 15px;
+    padding-bottom: 15px;
+    padding-top: 15px;
   h1 {
     font-size: 36px;
     font-family: peachi, "hoefler text", baskerville, Georgia, Times, sans-serif;
-    // text-align: center;
     color: whitesmoke;
-    // justify-content: center;
-    // text-align: center;
-    // align-items: center;
-    // display: flex;
     margin-top: 30px;
     margin-bottom: 30px;
   }
-  background-color: $dark-green-banner;
-  background-color: fill;
-  padding-bottom: 14px;
-  padding-top: 14px;
-  margin-top: 5px;
 }
 
 .recipe-container h2 {
   // font-family: peachi, "hoefler text", baskerville, Georgia, Times, sans-serif;
-  font-size: 23px;
+  font-size: 26px;
   font-family: Poppins, sans-serif;
   font-weight: normal;
   color:rgb(41, 41, 38);
@@ -68,7 +88,7 @@
 }
 
 .recipe-container h3 {
-  font-size: 23px;
+  font-size: 26px;
   font-family: Poppins, sans-serif;
   font-weight: normal;
   color:rgb(41, 41, 38);
@@ -76,22 +96,9 @@
   letter-spacing: 0.5px;
 }
 
-.recipe-header {
-  font-size: 36px;
-  font-family: peachi, "hoefler text", baskerville, Georgia, Times, sans-serif;
-  text-align: center;
-  color: whitesmoke;
-  margin-top: 30px;
-  margin-bottom: 30px;
-  background-color: $dark-green-banner;
-  display: flex;
-  // background-color: lightblue;
-  background-size: cover;
-  background-position: center;
-  margin-top: 15px;
-}
-.category-list {
-  margin-bottom: 25px;
+
+.category-tag-list {
+  margin-bottom: 15px;
   margin-top: 15px;
 }
 
@@ -100,36 +107,43 @@
   margin-bottom: 25px;
 }
 
-.container-description {
-  margin-top: 25px;
+.container-method {
+  margin-top: 15px;
   margin-bottom: 25px;
 }
 
 .container-notes {
-  background-color: #fae8b6b9;
+  background-color: #fae8b69b;
   // background-color: rgba(246, 255, 167, 0.781);
   // background-color: rgb(242, 242, 242);
   border-top: 20px;
   border-radius: 5px;
   color:rgb(41, 41, 38);
+  font-size: 10px;
   // justify-content: center;
   // opacity: .7;
-}
-
-.container-notes h2 {
-  text-align: center;
-  // margin-bottom: 15px;
-  // margin-top: 15px;
-  padding-top: 15px;
-  padding-bottom: 10px;
-  font-family: Poppins, sans-serif;
-  font-size: 18px;
-  background-color: rgba(244, 243, 234, 0.555);
-  // color: rgba(0, 0, 0, 0.505);
+  h2 {
+    text-align: center;
+    // margin-bottom: 15px;
+    // margin-top: 15px;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    font-family: Poppins, sans-serif;
+    font-size: 20px;
+    letter-spacing: 0.5px;
+    // background-color: #fae8b6b3;
+    // background-color: rgba(244, 243, 234, 0.555);
+    // color: rgba(0, 0, 0, 0.505);
+  }
 }
 
 .container-notes p {
   font-size: 15px;
+}
+
+.container-ai-tips {
+  margin-top: 15px;
+  text-align: center;
 }
 // .btn-primary {
 //   border-radius: 5px;
