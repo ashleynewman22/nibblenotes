@@ -41,7 +41,9 @@
   text-decoration: none;
   text-align: center;
   margin-top: 10px;
-  background-color: rgb(244, 243, 234);
+  // background-color: rgb(244, 243, 234);
+  background-size: cover;
+  // rgb(244, 243, 234);
 }
 
 .recipe-card {
@@ -51,6 +53,7 @@
   // justify-content: center;
   cursor: pointer;
   text-decoration: none;
+  background-color:transparent;
 }
 
 .recipe-card-info {

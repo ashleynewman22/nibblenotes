@@ -1,3 +1,4 @@
+<div class="recipe-new-page">
 <div class="container recipe-form">
   <div class="container-heading text-center mb-3">
     <h2 class="display-6">Add Your Recipe</h2>
@@ -23,12 +24,14 @@
           <%= f.input :photo, as: :file, label_html: { class: 'form-label small-text' }, input_html: { class: 'form-control-file' } %>
         </div>
 
+        <div class="select-categories">
         <div class="mb-3">
           <%= f.input :category_ids, collection: current_user.categories, as: :check_boxes, label_method: :name, value_method: :id, label: "Select categories", item_wrapper_class: 'form-check-inline', input_html: { class: 'form-check-input' }, label_html: { class: 'form-check-label small-text' } %>
         </div>
+        </div>
 
         <div class="text-center">
-          <%= f.submit "Add #{@recipe.title}", class: 'btn btn-success' %>
+          <%= f.submit "Add #{@recipe.title}", class: 'btn btn-secondary' %>
         </div>
 
       <% end %>
@@ -36,6 +39,7 @@
   </div>
 
   <div class="text-center mt-3">
-    <%= link_to "Back to all recipes", recipes_path, class: "btn btn-primary" %>
+    <%= link_to "Back to all recipes", recipes_path, class: "btn btn-primary-link" %>
   </div>
+</div>
 </div>
