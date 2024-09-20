@@ -63,12 +63,14 @@
               <p><%= note.content %></p>
               <!-- Link to update each note -->
               <% if @recipe.user == current_user %>
+              <div class="d-flex align-items-center">
                 <%= link_to edit_recipe_note_path(@recipe, note) do %>
-                  <i class="fas fa-light fa-pen"></i>
+                <i class="fas fa-light fa-pen"></i>
                 <% end %>
                 <%= button_to recipe_note_path(@recipe, note), method: :delete, form:{ data: { turbo_confirm: "Are you sure?" }}, class: "btn btn-delete" do %>
-                  <i class="fas fa-regular fa-trash"></i>
+                 <i class="fa-solid fa-trash"></i>
                 <% end %>
+              </div>
               <% end %>
             </li>
           <% end %>
@@ -77,7 +79,7 @@
         <!-- Link to add a new note -->
         <% if @recipe.user == current_user %>
           <%= link_to new_recipe_note_path(@recipe), class: "btn btn-add" do %>
-            <i class="fas fa-regular fa-circle-plus"></i>
+           <i class="fa-solid fa-circle-plus"></i>
           <% end %>
         <% end %>
         </div>
