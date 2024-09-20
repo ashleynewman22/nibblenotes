@@ -1,19 +1,47 @@
-
-  <!--<div class="container align-center">-->
-
-  <div class="banner" style="background-image: url(https://res.cloudinary.com/dhejoj1is/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1726751939/yellow_circle_qim3n1.jpg);">
+<!--<div class="container align-center">-->
+<div class="banner" style="background-image: url(https://res.cloudinary.com/dhejoj1is/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1726751939/yellow_circle_qim3n1.jpg);">
   <!--https://res.cloudinary.com/dhejoj1is/image/upload/v1726751939/yellow_circle_qim3n1.jpg-->
   <h1>Create your own recipe book</h1>
   <h2>add, categorise and personalise with ease</h2>
-
-<div class="first-recipe-button">
-  <%= link_to recipes_path(@recipes), class: "link wavy-link" do %>
-    <div>Add Your First Recipe</div>
-    <div class="line-graphic">
-      <svg class="link__graphic link__graphic--slide" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"></path>
-      </svg>
-    </div>
+  <div class="first-recipe-button">
+    <%= link_to recipes_path(@recipes), class: "link wavy-link" do %>
+      <div>Add Your First Recipe</div>
+      <div class="line-graphic">
+        <svg class="link__graphic link__graphic--slide" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+          <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"></path>
+        </svg>
+      </div>
     <% end %>
   </div>
+</div>
+<h2 class="home-text">HOW IT WORKS</h2>
+<div class="container-home-cards">
+  <div class="card-home">
+    <div class="card-home-icon">
+      <i class="fa-solid fa-mug-hot"></i>
+    </div>
+    <h5 class="card-home-title">Personalised</h5>
+    <p class="card-home-info">Get creative with your own personalised recipe book</p>
   </div>
+  <div class="card-home">
+    <div class="card-home-icon">
+      <i class="fa-solid fa-bowl-rice"></i>
+    </div>
+    <h5 class="card-home-title">Store</h5>
+    <p class="card-home-info">Add your go-to lunches, your dad's lasagna or a new Tik Tok recipe you've been dying to try</p>
+  </div>
+  <div class="card-home">
+    <div class="card-home-icon">
+      <i class="fa-solid fa-glass-water"></i>
+    </div>
+    <h5 class="card-home-title">Organize</h5>
+    <p class="card-home-info">Create categories for easy access</p>
+  </div>
+  <div class="card-home">
+    <div class="card-home-icon">
+      <i class="fa-solid fa-cake-candles"></i>
+    </div>
+    <h5 class="card-home-title">Make a note</h5>
+    <p class="card-home-info">A place to store your tips, notes and grandma's secret ingredient replacements</p>
+  </div>
+</div>

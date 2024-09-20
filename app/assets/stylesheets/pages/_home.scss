@@ -3,9 +3,10 @@
   height: 250px;
   // padding-top: 30px;
   // padding-bottom: 25px;
-  // justify-content: center;
-  // text-align: center;
-  // display: flex;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
   background-size: cover;
   background-position: center;
   background-image: url("https://res.cloudinary.com/dhejoj1is/image/upload/v1726751939/yellow_circle_qim3n1");
@@ -48,8 +49,14 @@
   text-decoration: none;
   color: #513629;
   padding:8px;
+  left: 43%;
 }
 // rgb(227, 101, 73);
+
+.first-recipe-button {
+  padding-bottom: 50px;
+}
+
 
 .link__graphic {
   position: absolute;
@@ -79,4 +86,59 @@
 }
 .sticky-footer {
   margin-top: auto; /* Push the footer to the bottom */
+}
+
+
+.home-text {
+  padding: 36px;
+  font-weight: bold;
+  color: rgb(59, 59, 59);
+  text-align: center;
+
+}
+
+.container-home-cards {
+  padding: 0 60px;
+  display: flex;
+  justify-content: center;
+
+  .card-home {
+    border: 2px solid rgb(161, 161, 161);
+    padding: 24px;
+    width: 250px;
+    text-align: center;
+    border-radius: 4px;
+    margin: 12px;
+
+  }
+
+  .card-home-info {
+    color: rgb(161, 161, 161);
+  }
+
+  .card-home-title {
+    color: rgb(59, 59, 59);
+    padding-top: 24px;
+    font-weight: bold;
+
+  }
+
+  .card-home-icon {
+    background-color: rgb(210, 210, 210);
+    border-radius: 50%;
+    padding: 24px;
+    width: 72px;
+    height: 72px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+
+
+  }
+
+  i {
+    color: rgb(59, 59, 59);
+    font-size: 28px;
+  }
 }
