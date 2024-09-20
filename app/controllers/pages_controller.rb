@@ -22,5 +22,8 @@ class PagesController < ApplicationController
 
   def explore
     @allrecipes = Recipe.where.not(user: current_user)
+    if params[:query].present?
+      @allrecipes = @allrecipes.search_by_title_and_ingredients(params[:query])
+    end
   end
 end

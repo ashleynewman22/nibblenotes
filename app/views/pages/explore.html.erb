@@ -1,28 +1,46 @@
-
-
-<div class="container justify-content-center">
-<h1>Explore other people's recipes</h1>
-  <div class="recipe-card">
-  <% if @allrecipes.any? %>
-      <% @allrecipes.each do |recipe| %>
-      <%= link_to recipe_path(recipe) do %>
-        <div class="recipe-card-info">
-          <p class="link-recipe"><%= recipe.title %></p>
-        <div class="recipe-tags">
-          <% if recipe.categories.any? %>
-            <% recipe.categories.each do |category| %>
-              <span class="tag"><%= category.name %></span>
-            <% end %>
-          <% else %>
-            <span class="tag">no categories</span>
-          <% end %>
-        </div>
-        <p><%= recipe.user.username %></p>
+<!-- HTML -->
+<div class="explore-cards-container">
+  <h1>Explore other people's recipes</h1>
+    <div class="row justify-content-center">
+  <div class="col-sm-8 my-3">
+        <%= form_with url: explore_path, method: :get, class: "d-flex" do %>
+          <%= text_field_tag :query,
+                params[:query],
+                class: "form-control",
+                placeholder: "Type a Recipe Name or Ingredient "
+            %>
+          <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+        <% end %>
       </div>
+    </div>
+    <div class="explore-recipe-grid">
+      <% if @allrecipes.any? %>
+      <% @allrecipes.each do |recipe| %>
+        <%= link_to recipe_path(recipe), class: "explore-recipe-card" do %>
+          <div class="recipe-image">
+            <% if recipe.photo.key %>
+              <%= cl_image_tag recipe.photo.key, class: "recipe-photo" %>
+            <% else %>
+              <img class="recipe-photo" src="https://res.cloudinary.com/dhejoj1is/image/upload/z7yjolgjdvysi0gvtmtt.jpg" alt="Recipe image">
+            <% end %>
+          </div>
+          <div class="recipe-details">
+            <h2 class="recipe-title"><%= recipe.title %></h2>
+            <p class="username">By <%= recipe.user.username %></p>
+            <div class="recipe-tags">
+              <% if recipe.categories.any? %>
+                <% recipe.categories.each do |category| %>
+                  <span class="tag"><%= category.name %></span>
+                <% end %>
+              <% else %>
+                <span class="tag">No categories</span>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
       <% end %>
-    <% end %>
     <% else %>
-      <p>No recipes found</p>
+      <p class="no-recipes">No recipes found</p>
     <% end %>
+    </div>
   </div>
-</div>
