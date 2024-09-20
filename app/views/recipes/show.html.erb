@@ -66,7 +66,7 @@
                 <%= link_to edit_recipe_note_path(@recipe, note) do %>
                   <i class="fas fa-light fa-pen"></i>
                 <% end %>
-                <%= button_to recipe_note_path(@recipe, note), method: :delete, form:{ data: { turbo_confirm: "Are you sure?" }}, class: "btn btn-delete" do %>
+                <%= button_to recipe_note_path(@recipe, note), method: :delete, form:{ data: { turbo_confirm: "Are you sure?" }}, class: "btn btn-add" do %>
                   <i class="fas fa-regular fa-trash"></i>
                 <% end %>
               <% end %>
