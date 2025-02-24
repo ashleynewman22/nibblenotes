@@ -21,9 +21,14 @@ class PagesController < ApplicationController
   end
 
   def explore
-    @allrecipes = Recipe.where.not(user: current_user)
+    # where.not allows recipes by signed-in user to be filtered out
+    # where. ensures only public recipes will be shown in explore
+    @allrecipes = Recipe.where.not(user: current_user).where(visibility: 'public')
     if params[:query].present?
       @allrecipes = @allrecipes.search_by_title_and_ingredients(params[:query])
     end
   end
 end
+
+# @allrecipes = Recipe.where.not(user: current_user)
+# @recipes = Recipe.where(visibility: 'public')

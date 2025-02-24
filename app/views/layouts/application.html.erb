@@ -7,11 +7,15 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    
+    <%= javascript_include_tag 'how_it_works', 'data-turbo-track': 'reload' %>
+    <%= javascript_include_tag 'animation_homepage', 'data-turbo-track': 'reload' %>
+    <%#= javascript_include_tag 'carousel_controller', 'data-turbo-track': 'reload' %>
+
+
   </head>
 
   <body>
-    
+
     <%= render "shared/navbar" %>
     <%= render "shared/flashes" %>
 

@@ -9,13 +9,17 @@
 
 // Your CSS partials
 @import "components/index";
+// @import "components/layout";
 @import "pages/index";
 @import "recipes/index";
 @import "recipes/show";
 @import "recipes/new";
+@import "recipes/edit";
 @import "notes/show";
+@import "notes/edit";
+@import "notes/new";
 @import "categories/index";
 @import "categories/show";
-@import "recipes/edit";
+
 // @import "recipes/show";
 // @import "explore/page"

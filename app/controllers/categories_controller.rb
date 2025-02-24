@@ -44,8 +44,13 @@ class CategoriesController < ApplicationController
 
   def destroy
     @category = Category.find(params[:id])
+    @category.recipes.each do |recipe|
+      recipe.categories.delete(@category)
+    end
     @category.destroy
-    redirect_to categories_url, notice: 'Category was successfully destroyed.'
+      redirect_to categories_url, status: :see_other
+    # redirect_to categories_url, notice: 'Category was successfully destroyed.'
+    # ADD THIS redirect_to categories_path, status: :see_other
   end
 
   private

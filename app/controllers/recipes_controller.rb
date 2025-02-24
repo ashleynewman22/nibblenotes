@@ -1,10 +1,4 @@
 class RecipesController < ApplicationController
-  # def index
-  #   @recipes = Recipe.where(user: current_user)
-  #   @categories = Category.all
-  #   # @notes = Note.all
-  # end
-
   def index
     @recipes = Recipe.where(user: current_user)
 
@@ -14,18 +8,17 @@ class RecipesController < ApplicationController
 
     if params[:category_id].present?
       @category = Category.find(params[:category_id])
-      # @recipes = @recipes.where(category: @category)
       @recipes = @recipes.joins(:categories).where(categories: { id: @category.id })
     end
-    # else
-    #   @recipes = Recipe.all
-    # end
   end
 
- # app/controllers/recipes_controller.rb
   def show
-    @recipe = Recipe.find(params[:id])
-    @notes = @recipe.notes
+    begin
+      @recipe = Recipe.find(params[:id])
+      @notes = @recipe.notes
+    rescue ActiveRecord::RecordNotFound
+      redirect_to recipes_path, alert: "Recipe not found."
+    end
   end
 
   def new_ai_tip
@@ -44,7 +37,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new(recipe_params)
     @recipe.user = current_user
     if @recipe.save
-      redirect_to @recipe
+      redirect_to @recipe, notice: 'Recipe was successfully created'
     else
       render :new, status: :unprocessable_entity
     end
@@ -64,6 +57,17 @@ class RecipesController < ApplicationController
       render :edit
     end
   end
+
+  def destroy
+    @recipe = Recipe.find(params[:id])
+    @recipe.destroy
+    redirect_to recipes_path, status: :see_other
+    # notice: 'Category was successfully destroyed.'
+  end
+
+  def user_recipes
+    @recipes = Recipe.where(user: current_user).or(Recipe.where(visibility: 'public'))
+  end
 end
 
   # def destroy
@@ -76,5 +80,5 @@ end
   private
 
   def recipe_params
-    params.require(:recipe).permit(:title, :photo, :ingredients, :method, category_ids: [])
+    params.require(:recipe).permit(:title, :photo, :ingredients, :method, :visibility, category_ids: [])
   end

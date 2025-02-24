@@ -1,10 +1,10 @@
 class Recipe < ApplicationRecord
   belongs_to :user
 
-  has_many  :recipe_categories
-  has_many  :categories, :through => :recipe_categories
+  has_many  :recipe_categories, dependent: :destroy
+  has_many  :categories, through: :recipe_categories
 
-  has_many  :notes
+  has_many  :notes, dependent: :destroy
   has_one_attached :photo
 
   validates :title, presence: true
@@ -17,4 +17,8 @@ class Recipe < ApplicationRecord
     using: {
       tsearch: { prefix: true } #
     }
+
+  VISIBILITY_OPTIONS = %w[public private]
+
+  validates :visibility, inclusion: { in: VISIBILITY_OPTIONS }
 end

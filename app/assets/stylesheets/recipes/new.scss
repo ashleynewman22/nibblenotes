@@ -1,20 +1,113 @@
-.container-heading h2 {
-  color:rgb(58, 58, 55);
-  margin-top: 30px;
-  margin-bottom: 30px;
-  font-family: peachi, "hoefler text", baskerville, Georgia, Times, sans-serif;
-  font-size: 36px;
-  text-align: center;
-  // border-bottom: #fd8aaa;
-  // border-bottom-width: 20px;
-  // border-bottom-color: #fd8aaa;
-}
-
-.recipe-info {
-  margin-left: 15px;
-  margin-right: 15px;
-}
 
 .recipe-new-page {
-  background-color: $background-soft;
+  // background-color: $light-green-lighter;
+  // background-color: $background-soft-lighter;
+  padding: 20px;
+  background: linear-gradient(135deg, #f6d365 0%, #fda085 50%, #a1c4fd 100%);
+  // (135deg, rgba(246, 211, 101, 0.7) 0%, rgba(253, 160, 133, 0.7) 50%, rgba(161, 196, 253, 0.7) 100%);
+  // 135deg, #f6d365 0%, #fda085 100%);
+  min-height: 100vh;
+}
+
+
+// HEADING CONTAINER
+.new-recipe-heading {
+  margin-top: 0px;
+  padding-bottom: 15px;
+  padding-top: 25px;
+  background-color: transparent;
+  // background-color: $dark-green-banner;
+  // background-color: fill;
+  // display: flex;
+  h2 {
+    color:rgb(58, 58, 55);
+    font-family: 'Poppins', sans-serif;
+    font-size: 49px;
+    font-weight: normal;
+    // height:
+    text-align: center;
+    font-weight: normal;
+    // margin: 0;
+  }
+}
+
+// OUTER FORM CONTAINER UNTIL FOOTER
+.recipe-form {
+  // background-color: transparent;
+  margin-bottom: 15px;
+  // margin-top: 10px;
+  background-color: transparent;
+  // background-color: $background-soft;
+}
+
+// INNER FORM CONTAINER AROUND BLOCKS
+.recipe-info {
+  // margin-left: 10px;
+  // margin-right: 10px;
+  background-color: white;
+  padding: 25px;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: 0 auto;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.new-recipe-labels {
+  color: black;
+  padding-left: 15px;
+  padding-right: 15px;
+  // font-family: Arial, Helvetica, sans-serif;
+}
+
+.add-new-recipe {
+  margin-top: 20px;
+}
+
+.recipe-custom-textbox {
+  border-color: $light-green;
+  border-radius: 10px;
+  border-width: 1px;
+}
+
+.recipe-custom-textbox:focus {
+  border-color: $light-green; /* Change this to your desired focus border color */
+  box-shadow: 0 0 3px $light-green; /* Optional: Add a shadow effect */
+}
+
+.custom-checkbox {
+  width: 25px;
+  height: 25px;
+  margin-right: 5px;
+}
+
+.custom-checkbox:checked {
+  background-color: $light-green; /* background when checked */
+  border-color: $light-green;
+}
+
+.form-check-label {
+  font-size: 15px; /* Adjust label font size */
+  margin-left: 5px;
+  margin-top: 5px;
+}
+
+.custom-visibility-checkbox {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  accent-color: blue;
+  // background-color: $light-green;
+}
+
+.custom-visibility-checkbox:checked {
+  accent-color: $light-green;
+}
+
+.custom-visibility-label {
+  font-size: 15px;
+  margin-left: 5px;
+}
+
+.select-visibility {
+  margin-top: 15px;
 }

@@ -4,6 +4,24 @@
   // #f4f1e0;
 }
 
+.recipe-visibility-show {
+  text-align: center;
+  background-color: $light-green;
+  font-size: 15px;
+  color: rgb(58, 58, 55);
+  display: inline-block;
+  background-clip: border-box;
+  // padding: 2px;
+  margin: 4px;
+  // flex-wrap: wrap;
+  // position: relative;
+  // padding-top: 4px;
+  // padding-bottom: 2px;
+  // margin-top: 12px;
+  // margin-bottom: 12px;
+  margin-top: 0;
+}
+
 .category-name {
   font-family: Poppins, sans-serif;
   // font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -148,23 +166,3 @@
 // .btn-primary {
 //   border-radius: 5px;
 // }
-
-.btn-delete {
-  background: transparent;
-  border: none;
-  color: $light-yellow;
-}
-
-.btn-delete:hover {
-  background:transparent;
-  border: none;
-  color: #f40011;
-  transition-timing-function: ease-in-out;
-  transition-duration: 0.2s;
-}
-
-.btn-edit {
-  background: transparent;
-  border: none;
-  color: #f40011;
-}

@@ -12,10 +12,10 @@
 
 <div class="recipe-index-page">
 <!--<div class="container">-->
-  <div class="recipe-banner"
-      style="background-image: url(https://res.cloudinary.com/dhejoj1is/image/upload/z7yjolgjdvysi0gvtmtt.jpg);">
+  <div class="recipe-banner">
       <h1> Recipe Book </h1>
   </div>
+    <!--style="background-image: url(https://res.cloudinary.com/dhejoj1is/image/upload/z7yjolgjdvysi0gvtmtt.jpg);">-->
 <!--</div>-->
 
 
@@ -44,7 +44,7 @@
 </div>
 </div>
 
-<div class="container justify-content-center pb-5">
+<div class="container justify-content-center">
   <div class="recipe-card">
   <% if @recipes.any? %>
       <% @recipes.each do |recipe| %>
@@ -55,16 +55,27 @@
             <% else  %>
               <img class="recipe-photo" src="https://res.cloudinary.com/dhejoj1is/image/upload/z7yjolgjdvysi0gvtmtt.jpg" alt="Place an image here">
             <% end %>
-          <p class="link-recipe"><%= recipe.title %></p>
+          <p class="recipe-index-title"><%= recipe.title %>
+            <% if recipe.visibility == "private" %>
+              <i class="fa-solid fa-lock private-icon" title="Private"></i>
+            <% end %>
+            </p>
           <%#= link_to recipe.title, recipe_path(recipe), class: "link-recipe" %>
         <div class="recipe-tags">
           <% if recipe.categories.any? %>
             <% recipe.categories.each do |category| %>
-              <span class="tag"><%= category.name %></span>
+              <span class="category-tag"><%= category.name %></span>
             <% end %>
           <% else %>
-            <span class="tag">no categories</span>
+            <span class="category-tag">no categories</span>
           <% end %>
+          <!--<div class="recipe-visibility">-->
+            <%# else %>
+<!--              <i class="fa-solid fa-lock-open" title="Public"></i>-->
+            <%# end %>
+<!--            <p>Visibility: <%#= recipe.visibility %></p>-->
+          <!--<span class="tag <%#= recipe.visibility %>"><%= recipe.visibility.capitalize %></span>-->
+          <!--</div>-->
         </div>
       </div>
       <% end %>
