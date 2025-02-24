@@ -1,9 +1,94 @@
 .categories-show-page {
   background-color: $background-soft;
   h2 {
-    font-family: Poppins, sans-serif;
-    font-size: 34px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 30px;
     letter-spacing: 0.5px;
     font-weight: normal;
+    color: rgb(41, 41, 38);
   }
+}
+
+.category-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 3px;
+  // background-color: yellow;
+  .btn-add {
+    font-size: 22px;
+  }
+  // font-size:25px;
+}
+
+.category-show-info {
+  // background-color: $background-light;
+  h1 {
+    font-size: 30px;
+    letter-spacing: 0.5px;
+    font-weight: normal;
+    color: rgb(41, 41, 38);
+    font-family: peachi, "hoefler text", baskerville, Georgia, Times, sans-serif;
+  }
+}
+
+// height: calc(100vh - 56px - 104px);
+//   position: sticky;
+//   top: 56px;
+// }
+
+.category-list {
+  height: calc(100vh - 56px - 104px);
+  overflow-y: scroll;
+  width: 100;
+  // background-color: yellow;
+  // display:flex;
+  // flex-wrap: nowrap;
+  // display: grid;
+  // grid-template-columns: 1fr 1fr 1fr;
+}
+.category-recipe-cards {
+  background-color: transparent;
+  // display: flex;
+  // align-items: stretch;
+}
+
+.placeholder-image {
+  border: 2px dashed #ccc;
+  color: #666;
+  font-size: 0.9rem;
+  background-color: #f0f0f0;
+}
+
+.card-title {
+  // background-color: pink;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  text-align: center;
+}
+
+.card {
+  transition: transform 0.2s ease-in-out;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.rounded-card {
+  border-radius: 15px;
+}
+
+.card-img-container {
+  overflow: hidden;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.card-img-top {
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover .card-img-top {
+  transform: scale(1.1);
 }

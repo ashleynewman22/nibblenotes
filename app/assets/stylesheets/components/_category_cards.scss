@@ -1,121 +1,121 @@
-.highlight-text {
-  transition: color 0.3s ease, transform 0.3s ease;
-}
+// .highlight-text {
+//   transition: color 0.3s ease, transform 0.3s ease;
+// }
 
-.highlight-text:hover {
-  color: #007bff;
-  transform: scale(1.05);
-}
+// .highlight-text:hover {
+//   color: #007bff;
+//   transform: scale(1.05);
+// }
 
-.category-card-wrapper {
-  width: 200px;
-  height: 250px;
-  position: relative;
-}
+// .category-card-wrapper {
+//   width: 200px;
+//   height: 250px;
+//   position: relative;
+// }
 
-.category-card {
-  width: 100%;
-  height: 100%;
-  border-radius: 20px;
-  overflow: hidden;
-  position: relative;
-  transition: all 0.3s ease;
-  background-color: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(5px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
+// .category-card {
+//   width: 100%;
+//   height: 100%;
+//   border-radius: 20px;
+//   overflow: hidden;
+//   position: relative;
+//   transition: all 0.3s ease;
+//   background-color: rgba(255, 255, 255, 0.1);
+//   backdrop-filter: blur(5px);
+//   border: 1px solid rgba(255, 255, 255, 0.2);
+// }
 
-.category-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  background-color: rgba(255, 255, 255, 0.9);
-}
+// .category-card:hover {
+//   transform: translateY(-5px);
+//   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+//   background-color: rgba(255, 255, 255, 0.9);
+// }
 
-.card-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  padding: 1rem;
-  opacity: 1; /* Set opacity to 1 to remove fade effect */
-}
+// .card-content {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+//   height: 100%;
+//   padding: 1rem;
+//   opacity: 1; /* Set opacity to 1 to remove fade effect */
+// }
 
-.category-image {
-  width: 120px;
-  height: 120px;
-  object-fit: cover;
-  margin-bottom: 1rem;
-}
+// .category-image {
+//   width: 120px;
+//   height: 120px;
+//   object-fit: cover;
+//   margin-bottom: 1rem;
+// }
 
-.card-title {
-  margin-bottom: 0.5rem;
-  color: #333;
-  font-weight: bold;
-}
+// .card-title {
+//   margin-bottom: 0.5rem;
+//   color: #333;
+//   font-weight: bold;
+// }
 
-.card-text {
-  color: #666;
-  font-size: 0.9rem;
-}
+// .card-text {
+//   color: #666;
+//   font-size: 0.9rem;
+// }
 
-.card-actions {
-  position: absolute;
-  bottom: 10px;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-}
+// .card-actions {
+//   position: absolute;
+//   bottom: 10px;
+//   left: 0;
+//   right: 0;
+//   display: flex;
+//   justify-content: center;
+//   gap: 10px;
+// }
 
-.category-action {
-  a {
-    text-decoration:none ;
+// .category-action {
+//   a {
+//     text-decoration:none ;
 
-  }
-  i {
-    font-size: 24px;
-    margin-right: 8px;
-  }
+//   }
+//   i {
+//     font-size: 24px;
+//     margin-right: 8px;
+//   }
 
-}
-#categoryinfo {
-  height: calc(100vh - 56px - 104px);
-  position: sticky;
-  top: 56px;
-}
+// }
+// #categoryinfo {
+//   height: calc(100vh - 56px - 104px);
+//   position: sticky;
+//   top: 56px;
+// }
 
-.category-list {
-  height: calc(100vh - 56px - 104px);
-  overflow-y: scroll;
-  width: 80;
-}
+// .category-list {
+//   height: calc(100vh - 56px - 104px);
+//   overflow-y: scroll;
+//   width: 80;
+// }
 
-.placeholder-image {
-    border: 2px dashed #ccc;
-    color: #666;
-    font-size: 0.9rem;
-    background-color: #f0f0f0;
-  }
-  .card {
-    transition: transform 0.2s ease-in-out;
-    overflow: hidden;
-  }
-  .card:hover {
-    transform: scale(1.03);
-  }
-  .rounded-card {
-    border-radius: 15px;
-  }
-  .card-img-container {
-    overflow: hidden;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-  }
-  .card-img-top {
-    transition: transform 0.3s ease-in-out;
-  }
-  .card:hover .card-img-top {
-    transform: scale(1.1);
-  }
+// .placeholder-image {
+//     border: 2px dashed #ccc;
+//     color: #666;
+//     font-size: 0.9rem;
+//     background-color: #f0f0f0;
+//   }
+//   .card {
+//     transition: transform 0.2s ease-in-out;
+//     overflow: hidden;
+//   }
+//   .card:hover {
+//     transform: scale(1.03);
+//   }
+//   .rounded-card {
+//     border-radius: 15px;
+//   }
+//   .card-img-container {
+//     overflow: hidden;
+//     border-top-left-radius: 15px;
+//     border-top-right-radius: 15px;
+//   }
+//   .card-img-top {
+//     transition: transform 0.3s ease-in-out;
+//   }
+//   .card:hover .card-img-top {
+//     transform: scale(1.1);
+//   }

@@ -143,17 +143,13 @@
   transition-timing-function: ease-in-out;
   transition-duration: 0.15s, 0.15s;
 }
-// .btn-edit {
-//   background: transparent;
-//   border: none;
-//   color: #f40011;
-// }
+
 .btn-add {
   color: $dark-green-banner;
   background-color: transparent;
   font-size: 30px;
   display: flex;
-  justify-content:end;
+  // justify-content:end;
   padding-bottom: 16px;
 }
 
@@ -162,3 +158,45 @@
   background-color: transparent;
   transition: color 0.3s ease;
 }
+
+.btn-editing {
+  font-size: 16px; /* Change the size */
+  color: $dark-green-banner;
+  // color: #ffcc00; /* Change the color */
+  padding-left: 5px; /* Optional: add spacing between the note content and the icon */
+}
+
+.btn-editing:hover {
+  color: $dark-green-lighter;
+  background-color: transparent;
+  transition: color 0.3s ease;
+}
+
+.btn-back {
+  color: $light-green-darker;
+  font-size: 30px;
+}
+
+.btn-back:hover {
+  color: $light-green-hover;
+}
+
+// .btn-delete {
+//   background: transparent;
+//   border: none;
+//   color: $light-yellow;
+// }
+
+// .btn-delete:hover {
+//   background:transparent;
+//   border: none;
+//   color: #f40011;
+//   transition-timing-function: ease-in-out;
+//   transition-duration: 0.2s;
+// }
+
+// .btn-edit {
+//   background: transparent;
+//   border: none;
+//   color: #f40011;
+// }

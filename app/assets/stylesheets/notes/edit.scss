@@ -1,0 +1,12 @@
+.notes-edit-page {
+  background-color: $background-soft;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: normal;
+    letter-spacing: 0.5px;
+    color: rgb(58, 58, 55);
+  }
+}

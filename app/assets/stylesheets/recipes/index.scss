@@ -11,13 +11,13 @@
   text-align: center;
   align-items: center;
   display: flex;
-  // background-color: lightblue;
-  background-size: cover;
-  background-position: center;
-  // background-blend-mode: multiply;
-  // box-shadow:  ;
+  background: radial-gradient(circle, #f6d365 0%, #fda085 50%, #a1c4fd 100%);
+  width: 100%;
+  height: 300px;
+  // background-size: cover;
+  // background-position: center;
   h1 {
-    font-family: Poppins, sans-serif;
+    font-family: 'Poppins', sans-serif;
     // "hoefler text", baskerville, Georgia, Times, sans-serif;
     color: whitesmoke;
     letter-spacing: 1px;
@@ -28,70 +28,109 @@
   }
 }
 
-.link-recipe {
+
+// .container {
+//   max-width: 1200px;
+//   margin: 0 auto;
+// }
+.recipe-card {
+  display: grid;
+  // grid-template-columns: 1fr 1fr 1fr 1fr;
+  // grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  column-gap: 18px; /* gap between each individual card */
+  row-gap: 14px; /* gap between each row of cards */
+  align-items: stretch;
+  justify-content: center;
+  cursor: pointer;
   text-decoration: none;
-  color: rgb(58, 58, 55);
-  // font-family: peachi, "hoefler text", baskerville, Georgia, Times, sans-serif;
-  font-weight: bold;
-  display: block;
-  margin-bottom: 1rem;
+  background-color:transparent;
+  // min-height: 300px;
 }
 
 .recipe-block {
   text-decoration: none;
   text-align: center;
   margin-top: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  // space-between;
+  // min-height: 350px;
+  overflow: hidden;
+  border-radius: 8px; /* Rounded corners */
+  // margin-top: 10px;
+  // padding: 1rem;
 
   // background-color: rgb(244, 243, 234);
-  background-size: cover;
+  // background-size: cover;
   // rgb(244, 243, 234);
-
-}
-
-.recipe-card {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
-  // justify-content: center;
-  cursor: pointer;
-  text-decoration: none;
-  background-color:transparent;
 }
 
 .recipe-card-info {
-  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  // border-radius: 5px;
-  // border: 1px solid #ddd; /* Default border */
-  border-radius: 8px; /* Rounded corners */
-  padding: 1rem;
+  // padding: 0.5rem; /* ADD THIS IF WANT PHOTOS NOT TO FIT ENTIRE CARD */
   background-color: rgb(244, 243, 234);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease; /* Smooth transition for hover */
-  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 250px;
 }
 
-.recipe-card-info p {
-  color:rgb(58, 58, 55);
-  font-weight: normal;
-  font-family: Poppins, sans-serif;
-  font-size: 14px;
-}
+// .recipe-card-info p {
+//   // color:rgb(58, 58, 55);
+//   color:blue;
+//   // font-weight: normal;
+//   // font-family: 'Poppins', sans-serif;
+//   // font-size: 14px;
+//   // margin-top: 8px;
+// }
 
 .recipe-card-info:hover {
   border-color: $light-gray;
   background-color: rgb(244, 243, 234);
-  // background-color: rgb(241, 240, 224);
-  // #2B6657;
   text-decoration: none;
   // border: 1px solid #ddd;
   // #ff6347; /* Change border color on hover */
   // box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* More pronounced shadow */
   transform: translateY(-5px); /* Slight upward movement */
-  // background-color: blue;
-  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  // border-radius: 5px;
+  border-radius: 8px;
   // transform: scaleX(0);
   // transition: transform 0.3s ease;
+}
+
+.recipe-photo {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  margin: 0;
+  border-radius: 5px;
+}
+
+.recipe-index-title {
+  text-decoration: none;
+  color: rgb(58, 58, 55);
+  font-weight: normal;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  margin-top: 5px;
+  // margin-bottom: 5px;
+  //  rgb(58, 58, 55);
+  // font-family: peachi, "hoefler text", baskerville, Georgia, Times, sans-serif;
+  // font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  // margin-bottom: 1rem;
+  // margin-top: 1rem;
+
+}
+
+.private-icon {
+  margin-left: 8px;
+  color: $dark-green-lighter;
+  font-size: 14px;
 }
 
 .recipe-tags {
@@ -99,11 +138,37 @@
   display: flex;
   flex-wrap: wrap;
   position: relative;
+  // justify-content: flex-start;
   gap: 0.5rem;
+  margin-left: 15px;
+  margin-bottom: 15px;
+  margin-right: 15px;
   // cursor: none;
 }
 
-.tag {
+// .tag {
+//   display: inline-block;
+//   background-color: #e0e0e0;
+//   color: rgb(58, 58, 55);
+//   padding-left: 8px;
+//   padding-right: 8px;
+//   font-size: 0.875rem;
+//   // margin-right: 5px;
+//   border-radius: 1rem;
+// }
+
+// .tag.public {
+//   background-color: $light-green;
+//   color: rgb(58, 58, 55);
+// }
+
+// .tag.private {
+//   background-color: #fd8aaac9;
+//   color: rgb(58, 58, 55);
+// }
+
+
+.category-tag {
   display: inline-block;
   // padding: 0.5rem 1 rem;
   padding-left: 8px;
@@ -113,13 +178,13 @@
   background-color: $light-yellow;
   // border: 2px solid #fd8aaa;
   color: rgb(58, 58, 55); /* Text color */
-  font-size: 0.875rem; /* Adjust font size as needed */
+  font-size: 14px; /* Adjust font size as needed */
   // text-transform: capitalize; /* Capitalize tag text */
   transition: background-color 0.3s ease, transform 0.3s ease;
   cursor:auto;
 }
 
-.tag:hover {
+.category-tag:hover {
   background-color: #fd8aaa;
   transition-timing-function: ease-in-out;
   transition-duration: 0.2s;
@@ -128,9 +193,9 @@
 
 .buttons-container {
   // margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   justify-content: left;
-  margin-top: 5px;
+  // margin-top: 3px;
   // padding-left: 10px;
   // padding-right: 10px;
   // margin-left: 3px;
@@ -142,19 +207,13 @@
   .recipe-card {
     grid-template-columns: 1fr;
   }
-  // .recipe-tags {
-  //   gap: 0.25rem;
-  // }
 }
 
 /* medium device, tablets */
 @media (min-width: 768px) {
   .recipe-card {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
   }
-  // .recipe-tags {
-  //   gap: 0.25rem;
-  // }
 }
 
 /* large device, desktop screens */
@@ -232,10 +291,4 @@
 .category-filter nav ul li a:hover {
   color: #2B6657; /* same colour as underline */
   // #ff6437;
-}
-.recipe-photo {
-  width: 100%;
-  height: 100px;
-  object-fit: cover;
-  border-radius: 4px;
 }

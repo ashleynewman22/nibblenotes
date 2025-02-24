@@ -16,7 +16,8 @@
       </div>
     </div>
     <div class="explore-recipe-grid">
-      <% if @allrecipes.any? %>
+      <%# if @allrecipes.any? %>
+      <% if @allrecipes.present? %> 
       <% @allrecipes.each do |recipe| %>
         <%= link_to recipe_path(recipe), class: "explore-recipe-card" do %>
           <div class="recipe-image">

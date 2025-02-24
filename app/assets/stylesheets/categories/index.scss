@@ -1,5 +1,3 @@
-
-
 .categories-index-page {
   background-color: $background-soft;
 }
@@ -31,5 +29,109 @@
 .search-button {
   // background-color: blue;
   padding-top: 0px;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
+}
+
+/* grids block which category cards go into */
+.category-card-block {
+  background-color: transparent;
+  display: grid;
+  column-gap: 16px; /* gap between each individual card */
+  row-gap: 12px;
+  // grid-template-columns: 1fr 1fr 1fr;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  // align-items: stretch;
+}
+
+/* behind each individual card */
+.category-card {
+  background-color: transparent;
+  // rgb(244, 243, 234);
+  transition: all 0.3s ease;
+  // transparent; CHANGE TO THIS LATER
+  text-decoration: none;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 15px;
+  margin-right: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow: hidden;
+  border-radius: 8px;
+  padding-bottom: 15px;
+}
+
+.category-card:hover {
+  // border-color: $light-gray;
+  background-color: transparent;
+  transform: translateY(-5px); /* Slight upward movement */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  // border-color: $light-gray;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+/* each individual card's content inside*/
+.card-content {
+  background-color: transparent;
+  // transition: all 0.3s ease; /* Smooth transition for hover */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 250px;
+}
+
+.card-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: normal;
+  font-size: 18px;
+  letter-spacing: 0.5px;
+  color: rgb(58, 58, 55);
+  margin-top: 8px;
+  // background-color: $light-yellow;
+}
+
+.card-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.category-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  margin: 0;
+  border-radius: 5px;
+}
+
+/* smallest device */
+@media (min-width: 100px) and (max-width: 575px) {
+  .category-card-block {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* medium device, tablets */
+@media (min-width: 768px) {
+  .category-card-block {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* large device, desktop screens */
+@media (min-width: 992px) {
+  .category-card-block {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+/* extra large devices, large desktops */
+@media (min-width: 1200px) {
+  .category-card-block {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }

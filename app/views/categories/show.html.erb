@@ -1,6 +1,6 @@
 <div class="categories-show-page">
 <div class="container d-flex p-5">
-  <div class="text-center" id="categoryinfo">
+  <div class="category-show-info text-center">
     <!-- Category image and details (unchanged) -->
     <% if @category.photo.attached? %>
       <%= cl_image_tag @category.photo.key, class: "rounded-circle mb-3", style: "width: 150px; height: 150px; object-fit: cover;" %>
@@ -9,24 +9,27 @@
         <span>Please add an image</span>
       </div>
     <% end %>
-
-    <h1 class="text-primary"><%= @category.name %></h1>
+  <!--<div class="category-details">-->
+    <h1><%= @category.name %></h1>
     <p class="text-muted"><%= @category.recipes.count %> recipes</p>
-    <div class="category-action">
+    <div class="category-actions">
       <%= link_to new_recipe_path(category: @category), class: "btn btn-add", title: "Add Recipe" do %>
         <i class="fas fa-plus-circle"></i>
       <% end %>
       <%= link_to edit_category_path(@category), class: "btn btn-add", title: "Edit Category" do %>
         <i class="fas fa-edit"></i>
       <% end %>
-      <%= link_to category_path(@category), method: :delete, data: { confirm: "Are you sure you want to delete this category?" }, class: "btn btn-add", title: "Delete Category" do %>
-        <i class="fas fa-trash-alt"></i>
-      <% end %>
+      <!-- ADD THIS-->
+      <%= button_to category_path(@category), method: :delete, data: { turbo_confirm: "Are you sure you want to delete this recipe?" }, class: "btn btn-add" do %>
+          <i class="fa-solid fa-trash"></i>
+        <% end %>
     </div>
-  </div>
+    </div>
+  <!--</div>-->
 
   <div class="p-5 category-list">
     <h2 class="pb-4 text-center">Recipes in this category</h2>
+    <div class="category-recipe-cards">
     <div class="row">
       <% @category.recipes.each do |recipe| %>
         <div class="col-md-4 pb-4">

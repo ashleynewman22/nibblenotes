@@ -1,26 +1,46 @@
+.landing-page {
+  // background-color: $light-cream;
+  background: linear-gradient(#fda085 15%, #f6c77c 65%, #f6cc89 100%);
+  // #7CABF6 another blue colour
+  // #a1c4fd 100%)
+  // (#a1c4fd 0%, #f6c77c 30%, #f7dcbc 100%);
+  // rgb(251,156,116) pink orange colour
+  // #f6c77c extra colour is use 3 colours
+  // ( #fda085 50%, #a1c4fd 100%); colours that looked nice, had blue
+  // (#e66465, #9198e5); default colours given
+  /* FOR PARALLEX SCROLLING EFFECT */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  // width: 100%;
+}
 
 .banner {
-  height: 250px;
+  height: 90vh;
   // padding-top: 30px;
   // padding-bottom: 25px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  background-size: cover;
-  background-position: center;
   background-image: url("https://res.cloudinary.com/dhejoj1is/image/upload/v1726751939/yellow_circle_qim3n1");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   h1 {
     color: #FFFFFF;
     // opacity: .8;
     padding-left: 40px;
     padding-right: 40px;
-    padding-top: 40px;
+    // padding-top: 40px;
     font-family: Poppins, sans-serif;
     font-size: 40px;
     font-weight:500;
     letter-spacing: 17%;
     text-align: center;
+    margin-top: 0 auto;
   }
   h2 {
     color: #513629;
@@ -33,15 +53,13 @@
 }
 
 .link {
-  background-color: rgba(212, 224, 155, 55);
-  // opacity: 55;
+  background-color: $light-green;
+  // rgba(212, 224, 155, 55);
   border-radius: 15px;
-
-  // #d4e09b;
 }
 
 .wavy-link {
-  font-family: Poppins, sans-serif; /* You might need to change this to a valid font-family */
+  font-family: 'Poppins', sans-serif; /* You might need to change this to a valid font-family */
   font-size: 16px;
   overflow: hidden;
   padding: 7px 0;
@@ -89,56 +107,257 @@
 }
 
 
-.home-text {
-  padding: 36px;
-  font-weight: bold;
-  color: rgb(59, 59, 59);
+// .home-text {
+//   padding: 36px;
+//   font-weight: bold;
+//   color: rgb(59, 59, 59);
+//   text-align: center;
+// }
+
+// .container-home-cards {
+//   padding: 0 60px;
+//   display: flex;
+//   justify-content: center;
+
+//   .card-home {
+//     border: 2px solid rgb(161, 161, 161);
+//     padding: 24px;
+//     width: 250px;
+//     text-align: center;
+//     border-radius: 4px;
+//     margin: 12px;
+
+//   }
+
+//   .card-home-info {
+//     color: rgb(161, 161, 161);
+//   }
+
+//   .card-home-title {
+//     color: rgb(59, 59, 59);
+//     padding-top: 24px;
+//     font-weight: bold;
+
+//   }
+
+//   .card-home-icon {
+//     background-color: rgb(210, 210, 210);
+//     border-radius: 50%;
+//     padding: 24px;
+//     width: 72px;
+//     height: 72px;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     margin: 0 auto;
+//   }
+
+//   i {
+//     color: rgb(59, 59, 59);
+//     font-size: 28px;
+//   }
+// }
+
+
+.how-it-works {
+  padding-top: 80px;
+  padding-bottom: 40px;
+  // margin-top: 50px;
   text-align: center;
-
+  background-color: transparent;
+  // #f6c77c;
+  width: 100%;
+  margin: 0 auto;
+  font-weight: bold;
+  font-size: 60px;
+  /* MAKE TEXT A GRADIENT COLOUR */
+  color: rgb(59, 59, 59);
+  // ADD BACKGROUND COLOUR TO SEPARATE IT FROM HERO SECTION
+  // background-color: white;
+  // height: 300px;
+  // background-size: cover;
+  // display: flex;
 }
 
-.container-home-cards {
-  padding: 0 60px;
-  display: flex;
-  justify-content: center;
-
-  .card-home {
-    border: 2px solid rgb(161, 161, 161);
-    padding: 24px;
-    width: 250px;
-    text-align: center;
-    border-radius: 4px;
-    margin: 12px;
-
-  }
-
-  .card-home-info {
-    color: rgb(161, 161, 161);
-  }
-
-  .card-home-title {
-    color: rgb(59, 59, 59);
-    padding-top: 24px;
-    font-weight: bold;
-
-  }
-
-  .card-home-icon {
-    background-color: rgb(210, 210, 210);
-    border-radius: 50%;
-    padding: 24px;
-    width: 72px;
-    height: 72px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-
-
-  }
-
-  i {
-    color: rgb(59, 59, 59);
-    font-size: 28px;
-  }
+.feature-section {
+  display: flex;  // Align the image and text side by side
+  align-items: center;  // Center the items vertically
+  margin-bottom: 70px;  // Space between sections
+  opacity: 0;  // Start hidden for animation
+  transform: translateY(50px);  // Start from below
+  transition: opacity 0.6s ease, transform 0.6s ease;  // Animation properties
+  padding: 30px 0;
+  background-color: white;
+  // margin-left: 70px;
+  // margin-right: 70px;
+  margin-top: 50px;
+  margin-bottom: 100px;
 }
+
+.feature-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.feature-content {
+  display: flex; // Ensure flex display for feature content
+  // flex-direction: row; // Default to row for right sections
+  // width: 100%; // Allow full width
+  align-items: center;
+  justify-content: center; // Horizontally center the content
+  height: 100%;
+}
+
+// .feature-section.right .feature-content {
+//   flex-direction: row;
+// }
+
+.feature-section.left .feature-content {
+  flex-direction: row-reverse;
+}
+
+.feature-description {
+  max-width: 600px; // Limit width for better readability
+  flex: 1; // Allow the description to fill the remaining space
+  padding: 0 20px; // Add horizontal padding for spacing from image
+  text-align: center; // Center text in the description
+}
+
+.feature-description h4 {
+  font-size: 2em; // Increase heading size
+  margin: 0 0 10px; // Margin below the heading
+}
+
+.feature-description p {
+  font-size: 1.2em; // Increase paragraph size
+  margin: 0; // Reset margin to control spacing
+}
+
+.feature-image {
+  width: 100%;  // Make the image take full width of its container
+  max-width: 500px;  // Set a max width for uniformity
+  height: auto;  // Maintain aspect ratio
+  margin: 0 20px;  // Space between image and text
+}
+
+//   width: 100%; /* Make the image responsive */
+//   max-width: 300px; /* Set a max width for the images */
+//   height: auto; /* Keep the aspect ratio */
+//   object-fit: cover; /* Ensures the image covers the area without stretching */
+// }
+//   max-width: 100%;        /* Ensure images scale down to fit the container */
+//   height: auto;           /* Maintain aspect ratio */
+//   display: block;         /* Removes any inline spacing */
+//   margin: 0 auto;        /* Center the image */
+//   border-radius: 8px;    /* Optional: adds rounded corners */
+// }
+
+
+// MY HOW TO USE CODE FOR TEXT
+// .how-to-use {
+//   padding-top: 50px;
+//   padding-bottom: 50px;
+//   // margin-top: 50px;
+//   text-align: center;
+//   background-color: transparent;
+//   // #f6c77c;
+//   width: 100%;
+//   margin: 0 auto;
+//   font-weight: bold;
+//   font-size: 60px;
+//   /* MAKE TEXT A GRADIENT COLOUR */
+//   color: rgb(59, 59, 59);
+// }
+
+// THIS CAROUSEL APPEARS AT BOTTOM OF PAGE BUT VERY SQUISHED
+// .how-to-use-carousel {
+//   position: relative;
+//   width: 100%;
+//   max-width: 600px;
+//   margin: 0 auto;
+
+//   .carousel-content {
+//     width: 100%;
+//     display: flex;
+//     overflow: hidden; // Hide content outside the carousel view
+//     scroll-snap-type: x mandatory; // Optional: helps with smooth snapping for slides
+//   }
+
+//   .carousel-slide {
+//     min-width: 100%; // Each slide takes full width
+//     flex-shrink: 0;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     scroll-snap-align: start; // Optional: aligns each slide at the start when scrolling
+//     transition: transform 0.5s ease; // Smooth transition between slides
+//   }
+
+//   button {
+//     position: absolute;
+//     top: 50%;
+//     transform: translateY(-50%);
+//     background: #fff;
+//     border: 1px solid #ddd;
+//     cursor: pointer;
+//     padding: 8px 12px;
+
+//     &:hover {
+//       background: #eee;
+//     }
+
+//     &:first-of-type {
+//       left: 10px;
+//     }
+
+//     &:last-of-type {
+//       right: 10px;
+//     }
+//   }
+// }
+
+
+// .how-to-use-carousel {
+//   position: relative;
+//   width: 100%;
+//   max-width: 600px;
+//   margin: 0 auto;
+
+//   .carousel-content {
+//     width: 100%;
+//     display: flex;
+//     overflow: hidden;
+//   }
+
+//   .carousel-slide {
+//     min-width: 100%; /* Full width for each slide */
+//     flex-shrink: 0;  /* Prevent shrinking */
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     transition: transform 0.5s ease; /* Smooth transition */
+//   }
+
+//   button {
+//     position: absolute;
+//     top: 50%;
+//     transform: translateY(-50%);
+//     background: #fff;
+//     border: 1px solid #ddd;
+//     cursor: pointer;
+//     padding: 8px 12px;
+//     z-index: 1; /* Ensure buttons appear above content */
+
+//     &:hover {
+//       background: #eee;
+//     }
+
+//     &:first-of-type {
+//       left: 10px;
+//     }
+
+//     &:last-of-type {
+//       right: 10px;
+//     }
+//   }
+// }

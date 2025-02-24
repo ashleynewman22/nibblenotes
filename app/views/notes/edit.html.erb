@@ -1,7 +1,19 @@
-<h1>Edit Note</h1>
-<%= simple_form_for [@recipe, @note] do |f| %>
-  <%= f.input :content, value:@note.content %>
-  <%= f.submit "Update" %>
-  <% end %>
-
-<%= link_to "Back to recipe", recipe_path(@recipe) %>
+<div class="notes-edit-page">
+  <div class="container note-edit-form">
+    <div class="container-heading text-center m-4">
+      <h1>Edit Note</h1>
+    </div>
+      <%= simple_form_for [@recipe, @note] do |f| %>
+      <%= f.input :content, value:@note.content, as: :text, input_html: { rows: 10, cols: 50 } %>
+    <div class="text-center">
+      <%= f.submit "Update", class: "btn btn-secondary" %>
+    </div>
+    <% end %>
+    <div class="text-center m-3">
+      <%= link_to "Back to recipe", recipe_path(@recipe), class:"btn btn-primary-link" %>
+    </div>
+  </div>
+</div>
+<!---->
+<%#= render 'layouts/footer' %>
+<!---->
